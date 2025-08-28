@@ -10,7 +10,6 @@
   },
   "devDependencies": {
     "sass-embedded": "^1.91.0",
-    "vite": "^7.1.2",
-    "vite-plugin-sass-glob-import": "^5.0.0"
+    "vite": "^7.1.2"
   }
 }
