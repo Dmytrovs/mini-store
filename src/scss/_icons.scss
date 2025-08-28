@@ -1,0 +1,61 @@
+[class*="_icon-"]{
+  font-family: 'icons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-arrow:before {
+  content: "\e900";
+}
+._icon-blockquote-icon:before {
+  content: "\e901";
+}
+._icon-ion_caret-down:before {
+  content: "\e902";
+}
+._icon-ion_cart:before {
+  content: "\e903";
+}
+._icon-ion_person:before {
+  content: "\e904";
+}
+._icon-ion_play-sharp:before {
+  content: "\e905";
+}
+._icon-ion_search:before {
+  content: "\e906";
+}
+._icon-ion_star:before {
+  content: "\e907";
+}
+._icon-la_angle-down:before {
+  content: "\e908";
+}
+._icon-radio-btn:before {
+  content: "\e909";
+}
+._icon-s-facebook:before {
+  content: "\e90a";
+}
+._icon-s-instagram:before {
+  content: "\e90b";
+}
+._icon-s-linkedin:before {
+  content: "\e90c";
+}
+._icon-social-hover:before {
+  content: "\e90d";
+}
+._icon-s-twitter:before {
+  content: "\e90e";
+}
+._icon-s-youtube:before {
+  content: "\e90f";
+}

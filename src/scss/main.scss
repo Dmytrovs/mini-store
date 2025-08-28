@@ -1,0 +1,60 @@
+
+@use 'fonts' as *;
+@use 'colors' as *;
+@use 'mixins' as *;
+
+@use 'reset' as *;
+@use 'icons' as *;
+
+
+// @import '@components/Header/header'; // SCSS компонента
+// @use "../components/Header/header.scss";
+
+
+
+
+// Мінімальна ширина сторінки
+$minWidth: 320;
+// Ширина полотна (макету)
+$maxWidth: 1920;
+// Ширина обмежуючого контейнера 
+$maxWidthContainer: 1310;
+// Загальний відступ у контейнера
+// (30 = по 15px ліворуч і праворуч)
+$containerPadding: 30;
+// Ширина спрацьовування першого брейкпоінту
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+
+
+
+/* ------------------------- */
+[class*="__container"] {
+	max-width: toRem($containerWidth);
+	padding-inline: toRem(15);
+	margin: 0 auto;
+}
+/* ------------------------ */
+
+
+
+
+
+body {
+    font-family: 'Lato', sans-serif;
+		background-color: $whiteColor;
+		color: $darkGrayColor;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: clip;
+
+	display: flex;
+	flex-direction: column;
+}
+
+.wrapper > main {
+	flex-grow: 1;
+}
+
