@@ -1,6 +1,6 @@
 import "./header.scss";
 
-// Подтягуємо HTML як строку 
+// Підтягуємо HTML як строку 
 import headerHtml from "./header.html?raw";
 
 

@@ -21,10 +21,11 @@
 
 	&__logo {
 		font-family: "Jost", sans-serif;
-		font-size: toRem(33);
 		font-weight: 400;
 		transition: color 0.3s;
 		z-index: 2;
+		color: $blackColor;
+		@include adaptiveValue("font-size", 33, 28);
 		@media (any-hover: hover) {
 			&:hover {
 				color: $blueColor;
@@ -35,13 +36,14 @@
 				color: $blueColor;
 			}
 		}
+
 	}
 
 	// .header__menu
 
 	&__menu {
 		display: flex;
-		@include adaptiveValue("column-gap", 140, 40);
+		@include adaptiveValue("column-gap", 140, 20);
 	}
 
 	// .header__actions
@@ -61,7 +63,7 @@
 			top: 0;
 			overflow: auto;
 			padding: toRem(50) toRem(15) toRem(15) toRem(30);
-			transition: left 0.3s;
+			transition: left 0.3s ease-in-out;
 			background-color: $grayBluelightColor;
 			&::before {
 				content: "";
@@ -70,8 +72,9 @@
 				height: toRem(70);
 				left: -100%;
 				top: 0;
-				transition: left 0.3s;
-				z-index: 2;
+				transition: left 0.3s ease-in-out;
+				z-index: 5;
+				background-color: $greyColor;
 			}
 			.menu-open & {
 				left: 0;
@@ -92,12 +95,13 @@
 		letter-spacing: toRem(1.4);
 		line-height: 148%;
 		text-transform: uppercase;
+		flex-wrap: wrap;
 		@include adaptiveValue("column-gap", 25, 12);
 		@media (max-width: toRem(767.98)) {
 			flex-direction: column;
 			row-gap: toRem(35);
 			font-size: toRem(35);
-			padding-block-start: toRem(50);
+			padding-block-start: toRem(70);
 			align-items: start;
 		}
 	}
