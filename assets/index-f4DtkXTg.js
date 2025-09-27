@@ -1,4 +1,4 @@
-(function(){const u=document.createElement("link").relList;if(u&&u.supports&&u.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))_(n);new MutationObserver(n=>{for(const l of n)if(l.type==="childList")for(const g of l.addedNodes)g.tagName==="LINK"&&g.rel==="modulepreload"&&_(g)}).observe(document,{childList:!0,subtree:!0});function c(n){const l={};return n.integrity&&(l.integrity=n.integrity),n.referrerPolicy&&(l.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?l.credentials="include":n.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function _(n){if(n.ep)return;n.ep=!0;const l=c(n);fetch(n.href,l)}})();const x=`<header class="header">\r
+(function(){const u=document.createElement("link").relList;if(u&&u.supports&&u.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))_(n);new MutationObserver(n=>{for(const l of n)if(l.type==="childList")for(const g of l.addedNodes)g.tagName==="LINK"&&g.rel==="modulepreload"&&_(g)}).observe(document,{childList:!0,subtree:!0});function c(n){const l={};return n.integrity&&(l.integrity=n.integrity),n.referrerPolicy&&(l.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?l.credentials="include":n.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function _(n){if(n.ep)return;n.ep=!0;const l=c(n);fetch(n.href,l)}})();const A=`<header class="header">\r
   <div class="header__container">\r
     <div class="header__logo">\r
       <a href="/">MiniStore<span>.</span></a>\r
@@ -51,7 +51,7 @@
     </div>\r
 \r
   </div>\r
-</header>`;function k(){document.body.style.overflow="hidden"}function L(){document.body.style.overflow="auto"}function q(){document.body.style.overflow==="hidden"?L():k()}function P(){const t=document.querySelector("#header");if(!t)return;t.innerHTML+=x;const u=document.querySelectorAll(".menu__toggle-btn");u.forEach(c=>{c.addEventListener("click",_=>{_.stopPropagation();const n=c.nextElementSibling,l=c.getAttribute("aria-expanded")==="true";c.classList.toggle("open"),c.setAttribute("aria-expanded",!l),n.classList.toggle("open",!l)})}),document.addEventListener("click",()=>{u.forEach(c=>{c.setAttribute("aria-expanded","false"),c.nextElementSibling.classList.remove("open"),c.classList.remove("open")})}),document.querySelector(".icon-menu")&&document.addEventListener("click",function(c){c.target.closest(".icon-menu")&&(q(),document.documentElement.classList.toggle("menu-open"))})}const S=document.querySelector(" .menu__item .menu__toggle-btn ");S&&S.addEventListener("click",t=>{t.target.blur()});const E=`<footer class="footer">\r
+</header>`;function x(){document.body.style.overflow="hidden"}function L(){document.body.style.overflow="auto"}function P(){document.body.style.overflow==="hidden"?L():x()}function q(){const t=document.querySelector("#header");if(!t)return;t.innerHTML+=A;const u=document.querySelectorAll(".menu__toggle-btn");u.forEach(c=>{c.addEventListener("click",_=>{_.stopPropagation();const n=c.nextElementSibling,l=c.getAttribute("aria-expanded")==="true";c.classList.toggle("open"),c.setAttribute("aria-expanded",!l),n.classList.toggle("open",!l)})}),document.addEventListener("click",()=>{u.forEach(c=>{c.setAttribute("aria-expanded","false"),c.nextElementSibling.classList.remove("open"),c.classList.remove("open")})}),document.querySelector(".icon-menu")&&document.addEventListener("click",function(c){c.target.closest(".icon-menu")&&(P(),document.documentElement.classList.toggle("menu-open"))})}const S=document.querySelector(" .menu__item .menu__toggle-btn ");S&&S.addEventListener("click",t=>{t.target.blur()});const E=`<footer class="footer">\r
   <div class="footer__top">\r
     <div class="footer__container">\r
       <div class="footer_company company-footer">\r
@@ -152,7 +152,7 @@
 \r
   </div>\r
 </footer>\r
-`;function T(){const t=document.querySelector("#footer");if(!t){console.warn("Елемент footerEl не знайдено");return}t.innerHTML=E;function u(){const _=document.querySelectorAll("[data-spollers]");if(_.length>0){let d=function(o,i=!1){o.forEach(r=>{r=i?r.item:r,i&&i.matches||!i?(r.classList.add("_spoller-init"),v(r)):(r.classList.remove("_spoller-init"),v(r,!1))})},v=function(o,i=!0){let r=o.querySelectorAll("details");r.length&&r.forEach(e=>{let a=e.querySelector("summary");i?(a.removeAttribute("tabindex"),e.hasAttribute("data-open")?(a.classList.add("_spoller-active"),e.open=!0):(e.open=!1,a.nextElementSibling.hidden=!0)):(a.setAttribute("tabindex","-1"),a.classList.remove("_spoller-active"),e.open=!0,a.nextElementSibling.hidden=!1)})},y=function(o){const i=o.target;if(i.closest("summary")&&i.closest("[data-spollers]")&&(o.preventDefault(),i.closest("[data-spollers]").classList.contains("_spoller-init"))){const r=i.closest("summary"),e=r.closest("details"),a=r.closest("[data-spollers]"),m=a.hasAttribute("data-one-spoller"),f=e.hasAttribute("data-spoller-scroll"),h=a.dataset.spollersSpeed?parseInt(a.dataset.spollersSpeed):500;if(!a.querySelectorAll("._slide").length&&(m&&!e.open&&w(a),e.open?setTimeout(()=>{e.open=!1},h):e.open=!0,r.classList.toggle("_spoller-active"),g(r.nextElementSibling,h),f&&r.classList.contains("_spoller-active"))){const b=e.dataset.spollerScroll,I=+b?+b:0,A=e.hasAttribute("data-spoller-scroll-noheader")?document.querySelector(".header").offsetHeight:0;window.scrollTo({top:e.offsetTop-(I+A),behavior:"smooth"})}}if(!i.closest("[data-spollers]")){const r=document.querySelectorAll("[data-spoller-close]");r.length&&r.forEach(e=>{const a=e.closest("[data-spollers]"),m=e.parentNode;if(a.classList.contains("_spoller-init")){const f=a.dataset.spollersSpeed?parseInt(a.dataset.spollersSpeed):500;e.classList.remove("_spoller-active"),n(e.nextElementSibling,f),setTimeout(()=>{m.open=!1},f)}})}},w=function(o){const i=o.querySelector("details[open]");if(i&&!o.querySelectorAll("._slide").length){const r=i.querySelector("summary"),e=o.dataset.spollersSpeed?parseInt(o.dataset.spollersSpeed):500;r.classList.remove("_spoller-active"),n(r.nextElementSibling,e),setTimeout(()=>{i.open=!1},e)}};var Y=d,K=v,R=y,V=w;document.addEventListener("click",y);const s=Array.from(_).filter(function(o,i,r){return!o.dataset.spollers.split(",")[0]});s.length&&d(s);const p=Array.from(_).filter(function(o,i,r){return o.dataset.spollers.split(",")[0]});if(p.length>0){const o=[];p.forEach(r=>{const a=r.dataset.spollers.split(","),m={};m.value=a[0],m.type=a[1]?a[1].trim():"max",m.item=r,o.push(m)});const i=o.map(function(r){return"("+r.type+"-width: "+r.value+"px),"+r.value+","+r.type}).filter(function(r,e,a){return a.indexOf(r)===e});i&&i.length&&i.forEach(r=>{const e=r.split(","),a=e[1],m=e[2],f=window.matchMedia(e[0]),h=o.filter(function(b){return b.value===a&&b.type===m});f.addEventListener("change",function(){d(h,f)}),d(h,f)})}}let n=(s,p=500,d=0)=>{s.classList.contains("_slide")||(s.classList.add("_slide"),s.style.transitionProperty="height, margin, padding",s.style.transitionDuration=p+"ms",s.style.height=`${s.offsetHeight}px`,s.offsetHeight,s.style.overflow="hidden",s.style.height=d?`${d}px`:"0px",s.style.paddingTop=0,s.style.paddingBottom=0,s.style.marginTop=0,s.style.marginBottom=0,window.setTimeout(()=>{s.hidden=!d,d||s.style.removeProperty("height"),s.style.removeProperty("padding-top"),s.style.removeProperty("padding-bottom"),s.style.removeProperty("margin-top"),s.style.removeProperty("margin-bottom"),d||s.style.removeProperty("overflow"),s.style.removeProperty("transition-duration"),s.style.removeProperty("transition-property"),s.classList.remove("_slide"),document.dispatchEvent(new CustomEvent("slideUpDone",{detail:{target:s}}))},p))},l=(s,p=500,d=0)=>{if(!s.classList.contains("_slide")){s.classList.add("_slide"),s.hidden=s.hidden?!1:null,d&&s.style.removeProperty("height");let v=s.offsetHeight;s.style.overflow="hidden",s.style.height=d?`${d}px`:"0px",s.style.paddingTop=0,s.style.paddingBottom=0,s.style.marginTop=0,s.style.marginBottom=0,s.offsetHeight,s.style.transitionProperty="height, margin, padding",s.style.transitionDuration=p+"ms",s.style.height=v+"px",s.style.removeProperty("padding-top"),s.style.removeProperty("padding-bottom"),s.style.removeProperty("margin-top"),s.style.removeProperty("margin-bottom"),window.setTimeout(()=>{s.style.removeProperty("height"),s.style.removeProperty("overflow"),s.style.removeProperty("transition-duration"),s.style.removeProperty("transition-property"),s.classList.remove("_slide"),document.dispatchEvent(new CustomEvent("slideDownDone",{detail:{target:s}}))},p)}},g=(s,p=500)=>s.hidden?l(s,p):n(s,p)}u();const c=document.querySelector("[data-spollers]");c&&c.addEventListener("click",_=>{_.target.blur()})}const j=`<div class="page__hero hero">\r
+`;function T(){const t=document.querySelector("#footer");if(!t){console.warn("Елемент footerEl не знайдено");return}t.innerHTML=E;function u(){const _=document.querySelectorAll("[data-spollers]");if(_.length>0){let d=function(o,i=!1){o.forEach(r=>{r=i?r.item:r,i&&i.matches||!i?(r.classList.add("_spoller-init"),v(r)):(r.classList.remove("_spoller-init"),v(r,!1))})},v=function(o,i=!0){let r=o.querySelectorAll("details");r.length&&r.forEach(e=>{let a=e.querySelector("summary");i?(a.removeAttribute("tabindex"),e.hasAttribute("data-open")?(a.classList.add("_spoller-active"),e.open=!0):(e.open=!1,a.nextElementSibling.hidden=!0)):(a.setAttribute("tabindex","-1"),a.classList.remove("_spoller-active"),e.open=!0,a.nextElementSibling.hidden=!1)})},y=function(o){const i=o.target;if(i.closest("summary")&&i.closest("[data-spollers]")&&(o.preventDefault(),i.closest("[data-spollers]").classList.contains("_spoller-init"))){const r=i.closest("summary"),e=r.closest("details"),a=r.closest("[data-spollers]"),m=a.hasAttribute("data-one-spoller"),f=e.hasAttribute("data-spoller-scroll"),h=a.dataset.spollersSpeed?parseInt(a.dataset.spollersSpeed):500;if(!a.querySelectorAll("._slide").length&&(m&&!e.open&&w(a),e.open?setTimeout(()=>{e.open=!1},h):e.open=!0,r.classList.toggle("_spoller-active"),g(r.nextElementSibling,h),f&&r.classList.contains("_spoller-active"))){const b=e.dataset.spollerScroll,I=+b?+b:0,k=e.hasAttribute("data-spoller-scroll-noheader")?document.querySelector(".header").offsetHeight:0;window.scrollTo({top:e.offsetTop-(I+k),behavior:"smooth"})}}if(!i.closest("[data-spollers]")){const r=document.querySelectorAll("[data-spoller-close]");r.length&&r.forEach(e=>{const a=e.closest("[data-spollers]"),m=e.parentNode;if(a.classList.contains("_spoller-init")){const f=a.dataset.spollersSpeed?parseInt(a.dataset.spollersSpeed):500;e.classList.remove("_spoller-active"),n(e.nextElementSibling,f),setTimeout(()=>{m.open=!1},f)}})}},w=function(o){const i=o.querySelector("details[open]");if(i&&!o.querySelectorAll("._slide").length){const r=i.querySelector("summary"),e=o.dataset.spollersSpeed?parseInt(o.dataset.spollersSpeed):500;r.classList.remove("_spoller-active"),n(r.nextElementSibling,e),setTimeout(()=>{i.open=!1},e)}};var Y=d,K=v,R=y,V=w;document.addEventListener("click",y);const s=Array.from(_).filter(function(o,i,r){return!o.dataset.spollers.split(",")[0]});s.length&&d(s);const p=Array.from(_).filter(function(o,i,r){return o.dataset.spollers.split(",")[0]});if(p.length>0){const o=[];p.forEach(r=>{const a=r.dataset.spollers.split(","),m={};m.value=a[0],m.type=a[1]?a[1].trim():"max",m.item=r,o.push(m)});const i=o.map(function(r){return"("+r.type+"-width: "+r.value+"px),"+r.value+","+r.type}).filter(function(r,e,a){return a.indexOf(r)===e});i&&i.length&&i.forEach(r=>{const e=r.split(","),a=e[1],m=e[2],f=window.matchMedia(e[0]),h=o.filter(function(b){return b.value===a&&b.type===m});f.addEventListener("change",function(){d(h,f)}),d(h,f)})}}let n=(s,p=500,d=0)=>{s.classList.contains("_slide")||(s.classList.add("_slide"),s.style.transitionProperty="height, margin, padding",s.style.transitionDuration=p+"ms",s.style.height=`${s.offsetHeight}px`,s.offsetHeight,s.style.overflow="hidden",s.style.height=d?`${d}px`:"0px",s.style.paddingTop=0,s.style.paddingBottom=0,s.style.marginTop=0,s.style.marginBottom=0,window.setTimeout(()=>{s.hidden=!d,d||s.style.removeProperty("height"),s.style.removeProperty("padding-top"),s.style.removeProperty("padding-bottom"),s.style.removeProperty("margin-top"),s.style.removeProperty("margin-bottom"),d||s.style.removeProperty("overflow"),s.style.removeProperty("transition-duration"),s.style.removeProperty("transition-property"),s.classList.remove("_slide"),document.dispatchEvent(new CustomEvent("slideUpDone",{detail:{target:s}}))},p))},l=(s,p=500,d=0)=>{if(!s.classList.contains("_slide")){s.classList.add("_slide"),s.hidden=s.hidden?!1:null,d&&s.style.removeProperty("height");let v=s.offsetHeight;s.style.overflow="hidden",s.style.height=d?`${d}px`:"0px",s.style.paddingTop=0,s.style.paddingBottom=0,s.style.marginTop=0,s.style.marginBottom=0,s.offsetHeight,s.style.transitionProperty="height, margin, padding",s.style.transitionDuration=p+"ms",s.style.height=v+"px",s.style.removeProperty("padding-top"),s.style.removeProperty("padding-bottom"),s.style.removeProperty("margin-top"),s.style.removeProperty("margin-bottom"),window.setTimeout(()=>{s.style.removeProperty("height"),s.style.removeProperty("overflow"),s.style.removeProperty("transition-duration"),s.style.removeProperty("transition-property"),s.classList.remove("_slide"),document.dispatchEvent(new CustomEvent("slideDownDone",{detail:{target:s}}))},p)}},g=(s,p=500)=>s.hidden?l(s,p):n(s,p)}u();const c=document.querySelector("[data-spollers]");c&&c.addEventListener("click",_=>{_.target.blur()})}const H=`<div class="page__hero hero">\r
   <div class="hero__inner">\r
     <button type="button" class="hero__swiper-button hero__swiper-button--prev _icon-arrow"></button>\r
 \r
@@ -195,7 +195,7 @@
   </div>\r
 </div>\r
 \r
-`;function H(){const t=document.querySelector("#mainSection");if(!t)return;t.innerHTML+=j;function u(){const c=document.querySelector(".hero__swiper"),_=document.querySelector(".hero__swiper-button--next"),n=document.querySelector(".hero__swiper-button--prev");c&&_&&n&&new Swiper(c,{slidesPerView:1,loop:!0,grabCursor:!0,autoplay:{delay:3e3,disableOnInteraction:!1,pauseOnMouseEnter:!0},navigation:{nextEl:_,prevEl:n}})}u()}const $=`<div class="insta">\r
+`;function j(){const t=document.querySelector("#mainSection");if(!t)return;t.innerHTML+=H;function u(){const c=document.querySelector(".hero__swiper"),_=document.querySelector(".hero__swiper-button--next"),n=document.querySelector(".hero__swiper-button--prev");c&&_&&n&&new Swiper(c,{slidesPerView:1,loop:!0,grabCursor:!0,autoplay:{delay:3e3,disableOnInteraction:!1,pauseOnMouseEnter:!0},navigation:{nextEl:_,prevEl:n}})}u()}const $=`<div class="insta">\r
   <div class="insta__container">\r
     <h3 class="insta__title title">Shop our insta</h3>\r
     <div class="insta__items">\r
@@ -463,13 +463,13 @@
       </div>\r
     </div>\r
   </div>\r
-</div>`;function G(){const t=document.querySelector("#mobileProducts");t&&(t.innerHTML+=U)}const Q=`<div class="smart-watches">\r
+</div>`;function W(){const t=document.querySelector("#mobileProducts");t&&(t.innerHTML+=U)}const G=`<div class="smart-watches">\r
   <div class="smart-watches__products-section">\r
     <div class="products-section">\r
       <div class="products-section__container">\r
 \r
         <div class="products-section__header">\r
-          <h2 class="products-section__title title">Mobile Products</h2>\r
+          <h2 class="products-section__title title">Smart Watches</h2>\r
           <a href="#" class="products-section__link">Go to Shop</a>\r
         </div>\r
 \r
@@ -480,8 +480,8 @@
                 <figure class="cards-products__card">\r
                   <img src="images/smart-watches/01.jpg" alt="Image-product" class="cards-products__image">\r
                   <figcaption class="cards-products__descr">\r
-                    <h4 class="cards-products__title">Iphone 10</h4>\r
-                    <p class="cards-products__price">$980</p>\r
+                    <h4 class="cards-products__title">Pink watch</h4>\r
+                    <p class="cards-products__price">$870</p>\r
                   </figcaption>\r
                   <button class="cards-products__button "> Add to cart <span class="_icon-ion_cart"></span></button>\r
                 </figure>\r
@@ -489,8 +489,8 @@
                 <figure class="cards-products__card">\r
                   <img src="images/smart-watches/02.jpg" alt="Image-product" class="cards-products__image">\r
                   <figcaption class="cards-products__descr">\r
-                    <h4 class="cards-products__title">Iphone 11</h4>\r
-                    <p class="cards-products__price">$1100</p>\r
+                    <h4 class="cards-products__title">Heavy watch</h4>\r
+                    <p class="cards-products__price">$680</p>\r
                   </figcaption>\r
                   <button class="cards-products__button "> Add to cart <span class="_icon-ion_cart"></span></button>\r
                 </figure>\r
@@ -498,8 +498,8 @@
                 <figure class="cards-products__card">\r
                   <img src="images/smart-watches/03.jpg" alt="Image-product" class="cards-products__image">\r
                   <figcaption class="cards-products__descr">\r
-                    <h4 class="cards-products__title">Iphone 8</h4>\r
-                    <p class="cards-products__price">$780</p>\r
+                    <h4 class="cards-products__title">spotted watch</h4>\r
+                    <p class="cards-products__price">$750</p>\r
                   </figcaption>\r
                   <button class="cards-products__button "> Add to cart <span class="_icon-ion_cart"></span></button>\r
                 </figure>\r
@@ -507,8 +507,8 @@
                 <figure class="cards-products__card">\r
                   <img src="images/smart-watches/04.jpg" alt="Image-product" class="cards-products__image">\r
                   <figcaption class="cards-products__descr">\r
-                    <h4 class="cards-products__title">Iphone 13</h4>\r
-                    <p class="cards-products__price">$1500</p>\r
+                    <h4 class="cards-products__title">black watch</h4>\r
+                    <p class="cards-products__price">$650</p>\r
                   </figcaption>\r
                   <button class="cards-products__button "> Add to cart <span class="_icon-ion_cart"></span></button>\r
                 </figure>\r
@@ -519,8 +519,8 @@
                 <figure class="cards-products__card">\r
                   <img src="images/smart-watches/01.jpg" alt="Image-product" class="cards-products__image">\r
                   <figcaption class="cards-products__descr">\r
-                    <h4 class="cards-products__title">Iphone 10</h4>\r
-                    <p class="cards-products__price">$980</p>\r
+                    <h4 class="cards-products__title">Pink watch</h4>\r
+                    <p class="cards-products__price">$870</p>\r
                   </figcaption>\r
                   <button class="cards-products__button "> Add to cart <span class="_icon-ion_cart"></span></button>\r
                 </figure>\r
@@ -528,8 +528,8 @@
                 <figure class="cards-products__card">\r
                   <img src="images/smart-watches/02.jpg" alt="Image-product" class="cards-products__image">\r
                   <figcaption class="cards-products__descr">\r
-                    <h4 class="cards-products__title">Iphone 11</h4>\r
-                    <p class="cards-products__price">$1100</p>\r
+                    <h4 class="cards-products__title">Heavy watch</h4>\r
+                    <p class="cards-products__price">$680</p>\r
                   </figcaption>\r
                   <button class="cards-products__button "> Add to cart <span class="_icon-ion_cart"></span></button>\r
                 </figure>\r
@@ -537,8 +537,8 @@
                 <figure class="cards-products__card">\r
                   <img src="images/smart-watches/03.jpg" alt="Image-product" class="cards-products__image">\r
                   <figcaption class="cards-products__descr">\r
-                    <h4 class="cards-products__title">Iphone 8</h4>\r
-                    <p class="cards-products__price">$780</p>\r
+                    <h4 class="cards-products__title">spotted watch</h4>\r
+                    <p class="cards-products__price">$750</p>\r
                   </figcaption>\r
                   <button class="cards-products__button "> Add to cart <span class="_icon-ion_cart"></span></button>\r
                 </figure>\r
@@ -546,8 +546,8 @@
                 <figure class="cards-products__card">\r
                   <img src="images/smart-watches/04.jpg" alt="Image-product" class="cards-products__image">\r
                   <figcaption class="cards-products__descr">\r
-                    <h4 class="cards-products__title">Iphone 13</h4>\r
-                    <p class="cards-products__price">$1500</p>\r
+                    <h4 class="cards-products__title">black watch</h4>\r
+                    <p class="cards-products__price">$650</p>\r
                   </figcaption>\r
                   <button class="cards-products__button "> Add to cart <span class="_icon-ion_cart"></span></button>\r
                 </figure>\r
@@ -558,8 +558,8 @@
                 <figure class="cards-products__card">\r
                   <img src="images/smart-watches/01.jpg" alt="Image-product" class="cards-products__image">\r
                   <figcaption class="cards-products__descr">\r
-                    <h4 class="cards-products__title">Iphone 10</h4>\r
-                    <p class="cards-products__price">$980</p>\r
+                    <h4 class="cards-products__title">Pink watch</h4>\r
+                    <p class="cards-products__price">$870</p>\r
                   </figcaption>\r
                   <button class="cards-products__button "> Add to cart <span class="_icon-ion_cart"></span></button>\r
                 </figure>\r
@@ -567,8 +567,8 @@
                 <figure class="cards-products__card">\r
                   <img src="images/smart-watches/02.jpg" alt="Image-product" class="cards-products__image">\r
                   <figcaption class="cards-products__descr">\r
-                    <h4 class="cards-products__title">Iphone 11</h4>\r
-                    <p class="cards-products__price">$1100</p>\r
+                    <h4 class="cards-products__title">Heavy watch</h4>\r
+                    <p class="cards-products__price">$680</p>\r
                   </figcaption>\r
                   <button class="cards-products__button "> Add to cart <span class="_icon-ion_cart"></span></button>\r
                 </figure>\r
@@ -576,8 +576,8 @@
                 <figure class="cards-products__card">\r
                   <img src="images/smart-watches/03.jpg" alt="Image-product" class="cards-products__image">\r
                   <figcaption class="cards-products__descr">\r
-                    <h4 class="cards-products__title">Iphone 8</h4>\r
-                    <p class="cards-products__price">$780</p>\r
+                    <h4 class="cards-products__title">spotted watch</h4>\r
+                    <p class="cards-products__price">$750</p>\r
                   </figcaption>\r
                   <button class="cards-products__button "> Add to cart <span class="_icon-ion_cart"></span></button>\r
                 </figure>\r
@@ -585,8 +585,8 @@
                 <figure class="cards-products__card">\r
                   <img src="images/smart-watches/04.jpg" alt="Image-product" class="cards-products__image">\r
                   <figcaption class="cards-products__descr">\r
-                    <h4 class="cards-products__title">Iphone 13</h4>\r
-                    <p class="cards-products__price">$1500</p>\r
+                    <h4 class="cards-products__title">black watch</h4>\r
+                    <p class="cards-products__price">$650</p>\r
                   </figcaption>\r
                   <button class="cards-products__button "> Add to cart <span class="_icon-ion_cart"></span></button>\r
                 </figure>\r
@@ -599,4 +599,4 @@
       </div>\r
     </div>\r
   </div>\r
-</div>`;function W(){const t=document.querySelector("#smartWatches");t&&(t.innerHTML+=Q)}P();T();H();M();O();B();N();G();W();new Swiper(".products-section__slider",{loop:!0,grabCursor:!0,pagination:{el:".products-section__swiper-pagination",clickable:!0,renderBullet:function(t,u){return'<button type="button" class="'+u+'"></button>'}}});
+</div>`;function Q(){const t=document.querySelector("#smartWatches");t&&(t.innerHTML+=G)}q();T();j();M();O();B();N();W();Q();new Swiper(".products-section__slider",{loop:!0,grabCursor:!0,pagination:{el:".products-section__swiper-pagination",clickable:!0,renderBullet:function(t,u){return'<button type="button" class="'+u+'"></button>'}}});
