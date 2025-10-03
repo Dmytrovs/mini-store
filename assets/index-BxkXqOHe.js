@@ -1,4 +1,4 @@
-(function(){const u=document.createElement("link").relList;if(u&&u.supports&&u.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))_(n);new MutationObserver(n=>{for(const l of n)if(l.type==="childList")for(const g of l.addedNodes)g.tagName==="LINK"&&g.rel==="modulepreload"&&_(g)}).observe(document,{childList:!0,subtree:!0});function c(n){const l={};return n.integrity&&(l.integrity=n.integrity),n.referrerPolicy&&(l.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?l.credentials="include":n.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function _(n){if(n.ep)return;n.ep=!0;const l=c(n);fetch(n.href,l)}})();const A=`<header class="header">\r
+(function(){const u=document.createElement("link").relList;if(u&&u.supports&&u.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))_(n);new MutationObserver(n=>{for(const l of n)if(l.type==="childList")for(const g of l.addedNodes)g.tagName==="LINK"&&g.rel==="modulepreload"&&_(g)}).observe(document,{childList:!0,subtree:!0});function c(n){const l={};return n.integrity&&(l.integrity=n.integrity),n.referrerPolicy&&(l.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?l.credentials="include":n.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function _(n){if(n.ep)return;n.ep=!0;const l=c(n);fetch(n.href,l)}})();const L=`<header class="header">\r
   <div class="header__container">\r
     <div class="header__logo">\r
       <a href="/">MiniStore<span>.</span></a>\r
@@ -51,7 +51,7 @@
     </div>\r
 \r
   </div>\r
-</header>`;function x(){document.body.style.overflow="hidden"}function L(){document.body.style.overflow="auto"}function q(){document.body.style.overflow==="hidden"?L():x()}function P(){const e=document.querySelector("#header");if(!e)return;e.innerHTML+=A;const u=document.querySelectorAll(".menu__toggle-btn");u.forEach(c=>{c.addEventListener("click",_=>{_.stopPropagation();const n=c.nextElementSibling,l=c.getAttribute("aria-expanded")==="true";c.classList.toggle("open"),c.setAttribute("aria-expanded",!l),n.classList.toggle("open",!l)})}),document.addEventListener("click",()=>{u.forEach(c=>{c.setAttribute("aria-expanded","false"),c.nextElementSibling.classList.remove("open"),c.classList.remove("open")})}),document.querySelector(".icon-menu")&&document.addEventListener("click",function(c){c.target.closest(".icon-menu")&&(q(),document.documentElement.classList.toggle("menu-open"))})}const S=document.querySelector(" .menu__item .menu__toggle-btn ");S&&S.addEventListener("click",e=>{e.target.blur()});const E=`<footer class="footer">\r
+</header>`;function A(){document.body.style.overflow="hidden"}function x(){document.body.style.overflow="auto"}function P(){document.body.style.overflow==="hidden"?x():A()}function q(){const r=document.querySelector("#header");if(!r)return;r.innerHTML+=L;const u=document.querySelectorAll(".menu__toggle-btn");u.forEach(c=>{c.addEventListener("click",_=>{_.stopPropagation();const n=c.nextElementSibling,l=c.getAttribute("aria-expanded")==="true";c.classList.toggle("open"),c.setAttribute("aria-expanded",!l),n.classList.toggle("open",!l)})}),document.addEventListener("click",()=>{u.forEach(c=>{c.setAttribute("aria-expanded","false"),c.nextElementSibling.classList.remove("open"),c.classList.remove("open")})}),document.querySelector(".icon-menu")&&document.addEventListener("click",function(c){c.target.closest(".icon-menu")&&(P(),document.documentElement.classList.toggle("menu-open"))})}const S=document.querySelector(" .menu__item .menu__toggle-btn ");S&&S.addEventListener("click",r=>{r.target.blur()});const E=`<footer class="footer">\r
   <div class="footer__top">\r
     <div class="footer__container">\r
       <div class="footer_company company-footer">\r
@@ -152,7 +152,7 @@
 \r
   </div>\r
 </footer>\r
-`;function T(){const e=document.querySelector("#footer");if(!e){console.warn("Елемент footerEl не знайдено");return}e.innerHTML=E;function u(){const _=document.querySelectorAll("[data-spollers]");if(_.length>0){let d=function(o,i=!1){o.forEach(r=>{r=i?r.item:r,i&&i.matches||!i?(r.classList.add("_spoller-init"),v(r)):(r.classList.remove("_spoller-init"),v(r,!1))})},v=function(o,i=!0){let r=o.querySelectorAll("details");r.length&&r.forEach(t=>{let a=t.querySelector("summary");i?(a.removeAttribute("tabindex"),t.hasAttribute("data-open")?(a.classList.add("_spoller-active"),t.open=!0):(t.open=!1,a.nextElementSibling.hidden=!0)):(a.setAttribute("tabindex","-1"),a.classList.remove("_spoller-active"),t.open=!0,a.nextElementSibling.hidden=!1)})},y=function(o){const i=o.target;if(i.closest("summary")&&i.closest("[data-spollers]")&&(o.preventDefault(),i.closest("[data-spollers]").classList.contains("_spoller-init"))){const r=i.closest("summary"),t=r.closest("details"),a=r.closest("[data-spollers]"),m=a.hasAttribute("data-one-spoller"),f=t.hasAttribute("data-spoller-scroll"),h=a.dataset.spollersSpeed?parseInt(a.dataset.spollersSpeed):500;if(!a.querySelectorAll("._slide").length&&(m&&!t.open&&w(a),t.open?setTimeout(()=>{t.open=!1},h):t.open=!0,r.classList.toggle("_spoller-active"),g(r.nextElementSibling,h),f&&r.classList.contains("_spoller-active"))){const b=t.dataset.spollerScroll,k=+b?+b:0,I=t.hasAttribute("data-spoller-scroll-noheader")?document.querySelector(".header").offsetHeight:0;window.scrollTo({top:t.offsetTop-(k+I),behavior:"smooth"})}}if(!i.closest("[data-spollers]")){const r=document.querySelectorAll("[data-spoller-close]");r.length&&r.forEach(t=>{const a=t.closest("[data-spollers]"),m=t.parentNode;if(a.classList.contains("_spoller-init")){const f=a.dataset.spollersSpeed?parseInt(a.dataset.spollersSpeed):500;t.classList.remove("_spoller-active"),n(t.nextElementSibling,f),setTimeout(()=>{m.open=!1},f)}})}},w=function(o){const i=o.querySelector("details[open]");if(i&&!o.querySelectorAll("._slide").length){const r=i.querySelector("summary"),t=o.dataset.spollersSpeed?parseInt(o.dataset.spollersSpeed):500;r.classList.remove("_spoller-active"),n(r.nextElementSibling,t),setTimeout(()=>{i.open=!1},t)}};var R=d,V=v,J=y,z=w;document.addEventListener("click",y);const s=Array.from(_).filter(function(o,i,r){return!o.dataset.spollers.split(",")[0]});s.length&&d(s);const p=Array.from(_).filter(function(o,i,r){return o.dataset.spollers.split(",")[0]});if(p.length>0){const o=[];p.forEach(r=>{const a=r.dataset.spollers.split(","),m={};m.value=a[0],m.type=a[1]?a[1].trim():"max",m.item=r,o.push(m)});const i=o.map(function(r){return"("+r.type+"-width: "+r.value+"px),"+r.value+","+r.type}).filter(function(r,t,a){return a.indexOf(r)===t});i&&i.length&&i.forEach(r=>{const t=r.split(","),a=t[1],m=t[2],f=window.matchMedia(t[0]),h=o.filter(function(b){return b.value===a&&b.type===m});f.addEventListener("change",function(){d(h,f)}),d(h,f)})}}let n=(s,p=500,d=0)=>{s.classList.contains("_slide")||(s.classList.add("_slide"),s.style.transitionProperty="height, margin, padding",s.style.transitionDuration=p+"ms",s.style.height=`${s.offsetHeight}px`,s.offsetHeight,s.style.overflow="hidden",s.style.height=d?`${d}px`:"0px",s.style.paddingTop=0,s.style.paddingBottom=0,s.style.marginTop=0,s.style.marginBottom=0,window.setTimeout(()=>{s.hidden=!d,d||s.style.removeProperty("height"),s.style.removeProperty("padding-top"),s.style.removeProperty("padding-bottom"),s.style.removeProperty("margin-top"),s.style.removeProperty("margin-bottom"),d||s.style.removeProperty("overflow"),s.style.removeProperty("transition-duration"),s.style.removeProperty("transition-property"),s.classList.remove("_slide"),document.dispatchEvent(new CustomEvent("slideUpDone",{detail:{target:s}}))},p))},l=(s,p=500,d=0)=>{if(!s.classList.contains("_slide")){s.classList.add("_slide"),s.hidden=s.hidden?!1:null,d&&s.style.removeProperty("height");let v=s.offsetHeight;s.style.overflow="hidden",s.style.height=d?`${d}px`:"0px",s.style.paddingTop=0,s.style.paddingBottom=0,s.style.marginTop=0,s.style.marginBottom=0,s.offsetHeight,s.style.transitionProperty="height, margin, padding",s.style.transitionDuration=p+"ms",s.style.height=v+"px",s.style.removeProperty("padding-top"),s.style.removeProperty("padding-bottom"),s.style.removeProperty("margin-top"),s.style.removeProperty("margin-bottom"),window.setTimeout(()=>{s.style.removeProperty("height"),s.style.removeProperty("overflow"),s.style.removeProperty("transition-duration"),s.style.removeProperty("transition-property"),s.classList.remove("_slide"),document.dispatchEvent(new CustomEvent("slideDownDone",{detail:{target:s}}))},p)}},g=(s,p=500)=>s.hidden?l(s,p):n(s,p)}u();const c=document.querySelector("[data-spollers]");c&&c.addEventListener("click",_=>{_.target.blur()})}const H=`<div class="page__hero hero">\r
+`;function T(){const r=document.querySelector("#footer");if(!r){console.warn("Елемент footerEl не знайдено");return}r.innerHTML=E;function u(){const _=document.querySelectorAll("[data-spollers]");if(_.length>0){let d=function(o,i=!1){o.forEach(t=>{t=i?t.item:t,i&&i.matches||!i?(t.classList.add("_spoller-init"),v(t)):(t.classList.remove("_spoller-init"),v(t,!1))})},v=function(o,i=!0){let t=o.querySelectorAll("details");t.length&&t.forEach(e=>{let a=e.querySelector("summary");i?(a.removeAttribute("tabindex"),e.hasAttribute("data-open")?(a.classList.add("_spoller-active"),e.open=!0):(e.open=!1,a.nextElementSibling.hidden=!0)):(a.setAttribute("tabindex","-1"),a.classList.remove("_spoller-active"),e.open=!0,a.nextElementSibling.hidden=!1)})},y=function(o){const i=o.target;if(i.closest("summary")&&i.closest("[data-spollers]")&&(o.preventDefault(),i.closest("[data-spollers]").classList.contains("_spoller-init"))){const t=i.closest("summary"),e=t.closest("details"),a=t.closest("[data-spollers]"),m=a.hasAttribute("data-one-spoller"),f=e.hasAttribute("data-spoller-scroll"),h=a.dataset.spollersSpeed?parseInt(a.dataset.spollersSpeed):500;if(!a.querySelectorAll("._slide").length&&(m&&!e.open&&w(a),e.open?setTimeout(()=>{e.open=!1},h):e.open=!0,t.classList.toggle("_spoller-active"),g(t.nextElementSibling,h),f&&t.classList.contains("_spoller-active"))){const b=e.dataset.spollerScroll,k=+b?+b:0,I=e.hasAttribute("data-spoller-scroll-noheader")?document.querySelector(".header").offsetHeight:0;window.scrollTo({top:e.offsetTop-(k+I),behavior:"smooth"})}}if(!i.closest("[data-spollers]")){const t=document.querySelectorAll("[data-spoller-close]");t.length&&t.forEach(e=>{const a=e.closest("[data-spollers]"),m=e.parentNode;if(a.classList.contains("_spoller-init")){const f=a.dataset.spollersSpeed?parseInt(a.dataset.spollersSpeed):500;e.classList.remove("_spoller-active"),n(e.nextElementSibling,f),setTimeout(()=>{m.open=!1},f)}})}},w=function(o){const i=o.querySelector("details[open]");if(i&&!o.querySelectorAll("._slide").length){const t=i.querySelector("summary"),e=o.dataset.spollersSpeed?parseInt(o.dataset.spollersSpeed):500;t.classList.remove("_spoller-active"),n(t.nextElementSibling,e),setTimeout(()=>{i.open=!1},e)}};var J=d,z=v,X=y,Z=w;document.addEventListener("click",y);const s=Array.from(_).filter(function(o,i,t){return!o.dataset.spollers.split(",")[0]});s.length&&d(s);const p=Array.from(_).filter(function(o,i,t){return o.dataset.spollers.split(",")[0]});if(p.length>0){const o=[];p.forEach(t=>{const a=t.dataset.spollers.split(","),m={};m.value=a[0],m.type=a[1]?a[1].trim():"max",m.item=t,o.push(m)});const i=o.map(function(t){return"("+t.type+"-width: "+t.value+"px),"+t.value+","+t.type}).filter(function(t,e,a){return a.indexOf(t)===e});i&&i.length&&i.forEach(t=>{const e=t.split(","),a=e[1],m=e[2],f=window.matchMedia(e[0]),h=o.filter(function(b){return b.value===a&&b.type===m});f.addEventListener("change",function(){d(h,f)}),d(h,f)})}}let n=(s,p=500,d=0)=>{s.classList.contains("_slide")||(s.classList.add("_slide"),s.style.transitionProperty="height, margin, padding",s.style.transitionDuration=p+"ms",s.style.height=`${s.offsetHeight}px`,s.offsetHeight,s.style.overflow="hidden",s.style.height=d?`${d}px`:"0px",s.style.paddingTop=0,s.style.paddingBottom=0,s.style.marginTop=0,s.style.marginBottom=0,window.setTimeout(()=>{s.hidden=!d,d||s.style.removeProperty("height"),s.style.removeProperty("padding-top"),s.style.removeProperty("padding-bottom"),s.style.removeProperty("margin-top"),s.style.removeProperty("margin-bottom"),d||s.style.removeProperty("overflow"),s.style.removeProperty("transition-duration"),s.style.removeProperty("transition-property"),s.classList.remove("_slide"),document.dispatchEvent(new CustomEvent("slideUpDone",{detail:{target:s}}))},p))},l=(s,p=500,d=0)=>{if(!s.classList.contains("_slide")){s.classList.add("_slide"),s.hidden=s.hidden?!1:null,d&&s.style.removeProperty("height");let v=s.offsetHeight;s.style.overflow="hidden",s.style.height=d?`${d}px`:"0px",s.style.paddingTop=0,s.style.paddingBottom=0,s.style.marginTop=0,s.style.marginBottom=0,s.offsetHeight,s.style.transitionProperty="height, margin, padding",s.style.transitionDuration=p+"ms",s.style.height=v+"px",s.style.removeProperty("padding-top"),s.style.removeProperty("padding-bottom"),s.style.removeProperty("margin-top"),s.style.removeProperty("margin-bottom"),window.setTimeout(()=>{s.style.removeProperty("height"),s.style.removeProperty("overflow"),s.style.removeProperty("transition-duration"),s.style.removeProperty("transition-property"),s.classList.remove("_slide"),document.dispatchEvent(new CustomEvent("slideDownDone",{detail:{target:s}}))},p)}},g=(s,p=500)=>s.hidden?l(s,p):n(s,p)}u();const c=document.querySelector("[data-spollers]");c&&c.addEventListener("click",_=>{_.target.blur()})}const H=`<div class="page__hero hero">\r
   <div class="hero__inner">\r
     <button type="button" class="hero__swiper-button hero__swiper-button--prev _icon-arrow"></button>\r
 \r
@@ -195,7 +195,7 @@
   </div>\r
 </div>\r
 \r
-`;function j(){const e=document.querySelector("#mainSection");if(!e)return;e.innerHTML+=H;function u(){const c=document.querySelector(".hero__swiper"),_=document.querySelector(".hero__swiper-button--next"),n=document.querySelector(".hero__swiper-button--prev");c&&_&&n&&new Swiper(c,{slidesPerView:1,loop:!0,grabCursor:!0,autoplay:{delay:3e3,disableOnInteraction:!1,pauseOnMouseEnter:!0},navigation:{nextEl:_,prevEl:n}})}u()}const $=`<div class="insta">\r
+`;function j(){const r=document.querySelector("#mainSection");if(!r)return;r.innerHTML+=H;function u(){const c=document.querySelector(".hero__swiper"),_=document.querySelector(".hero__swiper-button--next"),n=document.querySelector(".hero__swiper-button--prev");c&&_&&n&&new Swiper(c,{slidesPerView:1,loop:!0,grabCursor:!0,autoplay:{delay:3e3,disableOnInteraction:!1,pauseOnMouseEnter:!0},navigation:{nextEl:_,prevEl:n}})}u()}const $=`<div class="insta">\r
   <div class="insta__container">\r
     <h3 class="insta__title title">Shop our insta</h3>\r
     <div class="insta__items">\r
@@ -216,7 +216,7 @@
       </a>\r
     </div>\r
   </div>\r
-</div>`;function M(){const e=document.querySelector("#insta");e&&(e.innerHTML+=$)}const C=`<div class="subscribe">\r
+</div>`;function M(){const r=document.querySelector("#insta");r&&(r.innerHTML+=$)}const O=`<div class="subscribe">\r
   <div class="subscribe__container">\r
     <div class="subscribe__body">\r
       <div class="subscribe__content">\r
@@ -231,7 +231,7 @@
       </div>\r
     </div>\r
   </div>\r
-</div>`;function O(){const e=document.querySelector("#subscribe");e&&(e.innerHTML+=C)}const D=`<div class="testimonials">\r
+</div>`;function C(){const r=document.querySelector("#subscribe");r&&(r.innerHTML+=O)}const D=`<div class="testimonials">\r
   <div class="testimonials__container">\r
     <div class="testimonials__slider swiper">\r
       <div class="testimonials__wrapper swiper-wrapper">\r
@@ -284,7 +284,7 @@
       <button class="testimonials__swiper-button testimonials__swiper-button--prev _icon-arrow"></button>\r
     </div>\r
   </div>\r
-</div>`;function B(){const e=document.querySelector("#testimonials");e&&(e.innerHTML+=D,new Swiper(".testimonials__slider",{loop:!0,slidesPerView:1,grabCursor:!0,autoplay:{delay:3e3,disableOnInteraction:!1,pauseOnMouseEnter:!0},navigation:{nextEl:".testimonials__swiper-button--next",prevEl:".testimonials__swiper-button--prev"}}))}const N=`<div class="features">\r
+</div>`;function N(){const r=document.querySelector("#testimonials");r&&(r.innerHTML+=D,new Swiper(".testimonials__slider",{loop:!0,slidesPerView:1,grabCursor:!0,autoplay:{delay:3e3,disableOnInteraction:!1,pauseOnMouseEnter:!0},navigation:{nextEl:".testimonials__swiper-button--next",prevEl:".testimonials__swiper-button--prev"}}))}const B=`<div class="features">\r
   <div class="features__container">\r
     <ul class="features__items">\r
       <li class="features__item">\r
@@ -325,7 +325,7 @@
       </li>\r
     </ul>\r
   </div>\r
-</div>`;function F(){const e=document.querySelector("#features");e&&(e.innerHTML+=N)}const U=`<div class="mobile-products ">\r
+</div>`;function G(){const r=document.querySelector("#features");r&&(r.innerHTML+=B)}const F=`<div class="mobile-products ">\r
   <div class="mobile-products__products-section">\r
     <div class="products-section">\r
       <div class="products-section__container">\r
@@ -463,7 +463,7 @@
       </div>\r
     </div>\r
   </div>\r
-</div>`;function W(){const e=document.querySelector("#mobileProducts");e&&(e.innerHTML+=U)}const G=`<div class="smart-watches">\r
+</div>`;function W(){const r=document.querySelector("#mobileProducts");r&&(r.innerHTML+=F)}const R=`<div class="smart-watches">\r
   <div class="smart-watches__products-section">\r
     <div class="products-section">\r
       <div class="products-section__container">\r
@@ -599,7 +599,7 @@
       </div>\r
     </div>\r
   </div>\r
-</div>`;function Q(){const e=document.querySelector("#smartWatches");e&&(e.innerHTML+=G)}const Y=`<div class="page__sale">\r
+</div>`;function U(){const r=document.querySelector("#smartWatches");r&&(r.innerHTML+=R)}const Y=`<div class="page__sale">\r
   <div class="sale">\r
     <div class="sale__content">\r
       <div class="sale__body">\r
@@ -704,4 +704,53 @@
       <img src="images/sale/mobile.png" alt="image" class="destinations-featured__image">\r
     </div>\r
   </div>\r
-</div>-->`;function K(){const e=document.querySelector("#sale");e&&(e.innerHTML+=Y)}P();T();j();M();O();B();F();W();Q();K();new Swiper(".products-section__slider",{loop:!0,grabCursor:!0,pagination:{el:".products-section__swiper-pagination",clickable:!0,renderBullet:function(e,u){return'<button type="button" class="'+u+'"></button>'}}});
+</div>-->`;function K(){const r=document.querySelector("#sale");r&&(r.innerHTML+=Y)}const Q=`<div class="latest">\r
+  <div class="latest__container">\r
+    <div class="latest__header">\r
+      <h2 class="latest__title title">Latest Posts</h2>\r
+      <button class="latest__button">Read blogs</button>\r
+    </div>\r
+    <div class="latest__items">\r
+      <article class="latest__post-card card-post">\r
+        <a href="#" class="card-post__image">\r
+          <img src="images/latest/01.jpg" alt="image-latest" class="card-post__img">\r
+        </a>\r
+        <div class="card-post__meta-post post-meta">\r
+          <time datetime="2023-02-22" class="post-meta__time">feb 22, 2023</time>\r
+          <div class="post-meta__arrow">-</div>\r
+          <span class="post-meta__category">Gadgets</span>\r
+        </div>\r
+        <h3 class="card-post__title-post">\r
+          <a href="#" class="card-post__link-post">Get some cool gadgets in 2023</a>\r
+        </h3>\r
+      </article>\r
+      <article class="latest__post-card card-post">\r
+        <a href="#" class="card-post__image">\r
+          <img src="images/latest/02.jpg" alt="image-latest" class="card-post__img">\r
+        </a>\r
+        <div class="card-post__meta-post post-meta">\r
+          <time datetime="2023-02-22" class="post-meta__time">feb 22, 2023</time>\r
+          <div class="post-meta__arrow">-</div>\r
+          <span class="post-meta__category">technology</span>\r
+        </div>\r
+        <h3 class="card-post__title-post">\r
+          <a href="#" class="card-post__link-post">TECHNOLOGY HACK YOU WON’T GET</a>\r
+        </h3>\r
+      </article>\r
+      <article class="latest__post-card card-post">\r
+        <a href="#" class="card-post__image">\r
+          <img src="images/latest/03.jpg" alt="image-latest" class="card-post__img">\r
+        </a>\r
+        <div class="card-post__meta-post post-meta">\r
+          <time datetime="2023-02-22" class="post-meta__time">feb 22, 2023</time>\r
+          <div class="post-meta__arrow">-</div>\r
+          <span class="post-meta__category">camera</span>\r
+        </div>\r
+        <h3 class="card-post__title-post">\r
+          <a href="#" class="card-post__link-post">toP 10 SMALL cAMERA IN THE WORLD</a>\r
+        </h3>\r
+      </article>\r
+    </div>\r
+\r
+  </div>\r
+</div>`;function V(){const r=document.querySelector("#latest");r&&(r.innerHTML+=Q)}q();T();j();M();C();N();G();W();U();K();V();new Swiper(".products-section__slider",{loop:!0,grabCursor:!0,pagination:{el:".products-section__swiper-pagination",clickable:!0,renderBullet:function(r,u){return'<button type="button" class="'+u+'"></button>'}}});
