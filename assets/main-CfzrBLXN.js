@@ -1,13 +1,13 @@
 (function(){const u=document.createElement("link").relList;if(u&&u.supports&&u.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))_(n);new MutationObserver(n=>{for(const l of n)if(l.type==="childList")for(const g of l.addedNodes)g.tagName==="LINK"&&g.rel==="modulepreload"&&_(g)}).observe(document,{childList:!0,subtree:!0});function c(n){const l={};return n.integrity&&(l.integrity=n.integrity),n.referrerPolicy&&(l.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?l.credentials="include":n.crossOrigin==="anonymous"?l.credentials="omit":l.credentials="same-origin",l}function _(n){if(n.ep)return;n.ep=!0;const l=c(n);fetch(n.href,l)}})();const I=`<header class="header">\r
   <div class="header__container">\r
     <div class="header__logo">\r
-      <a href="/mini-store/index.html">MiniStore<span>.</span></a>\r
+      <a href="/">MiniStore<span>.</span></a>\r
     </div>\r
     <div class="header__menu menu">\r
       <!-- <button type="button" class="menu__icon icon-menu"><span></span></button> -->\r
       <nav class="menu__body">\r
         <ul class="menu__list">\r
-          <li class="menu__item"><a href="./index.html" class="menu__link">Home</a></li>\r
+          <li class="menu__item"><a href="/" class="menu__link">Home</a></li>\r
 \r
 \r
           <li class="menu__item">\r
@@ -32,19 +32,19 @@
       </nav>\r
 \r
 \r
-      <div class="header__actions actions-header">\r
-        <ul class="actions-header__items">\r
-          <li class="actions-header__item">\r
-            <a class="actions-header__link _icon-ion_search" href="#"></a>\r
-          </li>\r
-          <li class="actions-header__item">\r
-            <a class="actions-header__link _icon-ion_person" href="#"></a>\r
-          </li>\r
-          <li class="actions-header__item">\r
-            <a class="actions-header__link _icon-ion_cart" href="#"><span>(0)</span></a>\r
-          </li>\r
-        </ul>\r
-      </div>\r
+          <div class="header__actions actions-header">\r
+            <ul class="actions-header__items">\r
+              <li class="actions-header__item">\r
+                <a class="actions-header__link _icon-ion_search" href="#"></a>\r
+              </li>\r
+              <li class="actions-header__item">\r
+                <a class="actions-header__link _icon-ion_person" href="#"></a>\r
+              </li>\r
+              <li class="actions-header__item">\r
+                <a class="actions-header__link _icon-ion_cart" href="#"><span>(0)</span></a>\r
+              </li>\r
+            </ul>\r
+          </div>\r
 \r
       <button type="button" class="menu__icon icon-menu"><span></span></button>\r
 \r
