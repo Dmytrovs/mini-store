@@ -1,0 +1,191 @@
+@font-face {
+  font-family: "Lato";
+  src: url("@assets/fonts/Lato-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("@assets/fonts/Lato-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lato";
+  src: url("@assets/fonts/Lato-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lost";
+  src: url("@assets/fonts/Lost.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "icons";
+  src: url("@assets/fonts/icons.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  line-height: 1;
+  height: 100%;
+}
+
+address {
+  font-style: normal;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/* FORM */
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+[class*=_icon-] {
+  font-family: "icons" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-arrow:before {
+  content: "\e900";
+}
+
+._icon-blockquote-icon:before {
+  content: "\e901";
+}
+
+._icon-ion_caret-down:before {
+  content: "\e902";
+}
+
+._icon-ion_cart:before {
+  content: "\e903";
+}
+
+._icon-ion_person:before {
+  content: "\e904";
+}
+
+._icon-ion_play-sharp:before {
+  content: "\e905";
+}
+
+._icon-ion_search:before {
+  content: "\e906";
+}
+
+._icon-ion_star:before {
+  content: "\e907";
+}
+
+._icon-la_angle-down:before {
+  content: "\e908";
+}
+
+._icon-radio-btn:before {
+  content: "\e909";
+}
+
+._icon-s-facebook:before {
+  content: "\e90a";
+}
+
+._icon-s-instagram:before {
+  content: "\e90b";
+}
+
+._icon-s-linkedin:before {
+  content: "\e90c";
+}
+
+._icon-social-hover:before {
+  content: "\e90d";
+}
+
+._icon-s-twitter:before {
+  content: "\e90e";
+}
+
+._icon-s-youtube:before {
+  content: "\e90f";
+}

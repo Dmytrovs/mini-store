@@ -1,0 +1,107 @@
+@use "../../scss/colors" as *;
+@use "../../scss/mixins" as *;
+@use "../../scss/fonts" as *;
+
+@use "../../scss/reset" as *;
+@use "../../scss/icons" as *;
+
+// Компоненти
+@use "../../scss/common" as *;
+
+.subscribe {
+  @include adaptiveValue("padding-block-start", 120, 25);
+  // .subscribe__container
+
+  &__container {
+  }
+
+  // .subscribe__body
+
+  &__body {
+    @include adaptiveValue("padding-inline", 110, 30);
+    @include adaptiveValue("padding-block", 80, 20);
+    background-color: $blackColor;
+    display: flex;
+    gap: toRem(30);
+    @media (max-width: toEm(1110)) {
+      flex-wrap: wrap;
+      gap: toRem(15);
+    }
+  }
+
+  // .subscribe__content
+
+  &__content {
+    flex: 1 1 toRem(473);
+    @media (max-width: toEm(767.98)) {
+      text-align: center;
+    }
+  }
+
+  // .subscribe__title
+
+  &__title {
+    color: $whiteColor;
+    @media (max-width: toEm(767.98)) {
+      &:not(:last-child) {
+        margin-bottom: toRem(10);
+      }
+    }
+  }
+
+  // .subscribe__text
+
+  &__text {
+    color: $whiteColor;
+    font-weight: 300;
+    line-height: 1.38;
+    letter-spacing: toRem(0.48);
+  }
+
+  // .subscribe__form
+
+  &__form {
+    flex: 1 1 toRem(494);
+
+    //flex: 1;
+  }
+}
+
+.form {
+  // .form__form
+
+  &__form {
+    display: flex;
+    width: 100%;
+    @media (max-width: toEm(550)) {
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+  }
+
+  // .form__input
+
+  &__input {
+    flex: 1;
+    background-color: $whiteColor;
+    border: toRem(1) solid #eee;
+    padding-inline-end: toRem(10);
+    @include adaptiveValue("padding-inline-start", 30, 10);
+    @include adaptiveValue("padding-block", 15.5, 10);
+    font-size: toRem(15);
+    &::placeholder {
+      color: $darkGrayColor;
+      font-weight: 300;
+      line-height: 1.38;
+      letter-spacing: toRem(0.48);
+      @media (max-width: toEm(550)) {
+        text-align: center;
+      }
+    }
+  }
+
+  // .form__button
+
+  &__button {
+  }
+}

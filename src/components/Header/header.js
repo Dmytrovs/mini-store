@@ -24,7 +24,9 @@ function bodyLockToggle() {
 
 
 export function renderHeader() {
-  document.querySelector("#header").innerHTML += headerHtml;
+const container =  document.querySelector("#header");
+  if (!container) return;
+ container.innerHTML += headerHtml;
   const btns = document.querySelectorAll('.menu__toggle-btn')
 
   btns.forEach(button => {
@@ -63,6 +65,14 @@ export function renderHeader() {
 }
 
 
-renderHeader();
+
+
+// Прибераю фокус після кліку
+const menuItemFocus = document.querySelector(' .menu__item .menu__toggle-btn ');
+if (menuItemFocus) {
+  menuItemFocus.addEventListener('click', (e) => {
+    e.target.blur();
+  });
+}
 
 

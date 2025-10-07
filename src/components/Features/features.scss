@@ -1,0 +1,84 @@
+@use "../../scss/colors" as *;
+@use "../../scss/mixins" as *;
+@use "../../scss/fonts" as *;
+
+@use "../../scss/reset" as *;
+@use "../../scss/icons" as *;
+
+// Компоненти
+@use "../../scss/common" as *;
+
+.features {
+  @include adaptiveValue("padding-block-start", 120, 25);
+  // .features__container
+
+  &__container {
+  }
+
+  // .features__items
+
+  &__items {
+    gap: toRem(20);
+    @media (min-width: toEm(550)) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(283px, 1fr));
+    }
+    @media (max-width: toEm(767.98)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: toEm(549.98)) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  // .features__item
+
+  &__item {
+    display: flex;
+    column-gap: toRem(13);
+    @media (max-width: toEm(549.98)) {
+      width: 100%;
+      max-width: toRem(400);
+    }
+  }
+
+  // .features__icon
+
+  &__icon {
+  }
+
+  // .features__image
+
+  &__image {
+    width: 25px;
+    flex-shrink: 0;
+  }
+
+  // .features__label
+
+  &__text {
+  }
+
+  &__label {
+    color: $blackColor;
+    font-family: "Jost", sans-serif;
+    font-size: toRem(20);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: toRem(0.3);
+    text-transform: uppercase;
+    &:not(:last-child) {
+      margin-bottom: toRem(4);
+    }
+  }
+
+  // .features__descr
+
+  &__descr {
+    font-weight: 300;
+    line-height: 1.38;
+    letter-spacing: toRem(0.48);
+  }
+}

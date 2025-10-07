@@ -1,0 +1,127 @@
+@use "../scss/colors" as *;
+@use "../scss/mixins" as *;
+@use "../scss/fonts" as *;
+
+@use "../scss/reset" as *;
+@use "../scss/icons" as *;
+
+// Компоненти
+@use "../scss/common" as *;
+
+.promo-video {
+	@include adaptiveValue("padding-block-start", 120, 25);
+	// .promo-video__container
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		column-gap: 20px;
+		@media (max-width: toEm(767.98)) {
+			flex-direction: column;
+			row-gap: toRem(20);
+		}
+	}
+
+	// .promo-video__play-video
+
+	&__play-video {
+		flex: 1 1 49.23%;
+				max-width: 640px;
+		position: relative;
+		cursor: pointer;
+		overflow: hidden;
+	}
+
+	// .promo-video__video
+
+	&__video {
+		flex-basis: 49.23%;
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		display: none;
+	}
+
+	&__play-video.active {
+		.promo-video__video {
+			display: block;
+			z-index: 10;
+		}
+	}
+
+	// .promo-video__image
+
+	&__image {
+		width: 100%;
+		max-width: 640px;
+		height: auto;
+		aspect-ratio: 640 / 603;
+	}
+	&__icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: 50%;
+		background-color: $whiteColor;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include adaptiveValue("width", 100, 50);
+		@include adaptiveValue("height", 100, 50);
+
+		transition:
+			background-color 0.3s,
+			color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $grayBluelightColor;
+			}
+		}
+		._icon-ion_play-sharp {
+			@include adaptiveValue("font-size", 32, 25);
+			color: #040404;
+		}
+	}
+
+	// .promo-video__content
+
+	&__content {
+		flex: 0 1 45.38%;
+		@media (max-width: toEm(767.98)) {
+			text-align: center;
+		}
+	}
+
+	// .promo-video__title
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: toRem(10);
+		}
+	}
+
+	// .promo-video__text
+
+	&__text {
+		font-weight: 300;
+		line-height: 1.38; /* 22.08px */
+		letter-spacing: toRem(0.48);
+		p {
+			&:not(:last-child) {
+				margin-bottom: toRem(15);
+			}
+		}
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 40, 20);
+		}
+	}
+
+	// .promo-video__button
+
+	&__button {
+	}
+}

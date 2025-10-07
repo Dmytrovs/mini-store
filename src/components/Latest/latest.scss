@@ -1,0 +1,175 @@
+@use "../../scss/colors" as *;
+@use "../../scss/mixins" as *;
+@use "../../scss/fonts" as *;
+
+@use "../../scss/reset" as *;
+@use "../../scss/icons" as *;
+
+// Компоненти
+@use "../../scss/common" as *;
+
+.latest {
+  @include adaptiveValue("padding-block-start", 120, 25);
+  // .latest__container
+
+  &__container {
+  }
+
+  // .latest__header
+
+  &__header {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: toRem(30);
+      @media (max-width: toEm(767.98)) {
+        margin-bottom: toRem(15);
+      }
+    }
+    @media (min-width: toEm(767.98)) {
+      display: flex;
+      align-items: center;
+      column-gap: toRem(20);
+      justify-content: space-between;
+    }
+  }
+
+  // .latest__title
+
+  &__title {
+    text-align: center;
+    @media (max-width: toEm(767.98)) {
+      &:not(:last-child) {
+        margin-bottom: toRem(7);
+      }
+    }
+  }
+
+  // .latest__button
+
+  &__button {
+    color: $blackColor;
+    font-size: toRem(14);
+    font-weight: 500;
+    letter-spacing: toRem(1.4);
+    text-transform: uppercase;
+    margin-bottom: toRem(2);
+    line-height: 1.48;
+    border-bottom: 3px solid $greyRectangleColor;
+    transition:
+      color 0.3s ease-in-out,
+      border-bottom 0.3s ease-in-out;
+    will-change: border-bottom;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $blueColor;
+        border-bottom: 3px solid $blueColor;
+      }
+    }
+    @media (max-width: toEm(767.98)) {
+      margin-bottom: toRem(0);
+    }
+  }
+
+  // .latest__post-card
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: toRem(20);
+    flex-wrap: wrap;
+    @media (max-width: toEm(767.98)) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: toRem(10);
+    }
+    @media (max-width: toEm(470)) {
+      grid-template-columns: 1fr;
+      row-gap: toRem(20);
+    }
+  }
+  &__post-card {
+  }
+}
+.card-post {
+  display: flex;
+  flex-direction: column;
+  // .card-post__image
+
+  &__image {
+    aspect-ratio: 420 / 298;
+    max-width: 420px;
+    width: 100%;
+    overflow: hidden;
+    @media (max-width: toEm(470)) {
+      max-width: 100%;
+    }
+    &:not(:last-child) {
+      margin-bottom: toRem(14);
+    }
+  }
+
+  // .card-post__img
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__title-post {
+  }
+
+  &__link-post {
+    color: $blackColor;
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
+    line-height: 1.44; /* 28.8px */
+    letter-spacing: toRem(1.2);
+    text-transform: uppercase;
+    transition: color 0.3s;
+    @include adaptiveValue("font-size", 20, 15);
+    @media (any-hover: hover) {
+      &:hover {
+        color: $blueColor;
+      }
+    }
+  }
+
+  // .card-post__meta-post
+
+  &__meta-post {
+  }
+}
+.post-meta {
+  color: $greyMediumColor;
+  font-family: "Jost", sans-serif;
+  font-size: toRem(13);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: toRem(0.78);
+  text-transform: uppercase;
+  display: flex;
+  column-gap: toRem(5);
+  flex-grow: 1;
+  &:not(:last-child) {
+    margin-bottom: toRem(6);
+  }
+  // .post-meta__time
+
+  &__time {
+  }
+
+  // .post-meta__arrow
+
+  &__arrow {
+  }
+
+  // .post-meta__category
+
+  &__category {
+  }
+}

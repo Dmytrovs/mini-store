@@ -1,0 +1,143 @@
+@use "../../scss/colors" as *;
+@use "../../scss/mixins" as *;
+@use "../../scss/fonts" as *;
+
+@use "../../scss/reset" as *;
+@use "../../scss/icons" as *;
+
+// Компоненти
+@use "../../scss/common" as *;
+
+.testimonials {
+	@include adaptiveValue("padding-block-start", 120, 25);
+	// .testimonials__container
+
+	&__container {
+		position: relative;
+	}
+
+	// .testimonials__slider
+
+	&__slider {
+	}
+
+	// .testimonials__wrapper
+
+	&__wrapper {
+	}
+
+	// .testimonials__slide
+
+	&__slide {
+		@media (max-width: toEm(1170)) {
+			padding-inline: toRem(40);
+		}
+	}
+
+	// .testimonials__content
+
+	&__content {
+		max-inline-size: toRem(1015);
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	// .testimonials__quote-top
+
+	&__quote-top {
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 30, 15);
+		}
+	}
+
+	// .testimonials__quotation-element
+
+	&__quotation-element {
+		font-size: toRem(91);
+		color: $quoteGrayIceColor;
+	}
+
+	// .testimonials__text
+
+	&__text {
+		font-weight: 300;
+		line-height: 1.38;
+		letter-spacing: toRem(0.68);
+		@include adaptiveValue("font-size", 34, 20);
+	}
+
+	// .testimonials__quote-bottom
+
+	&__quote-bottom {
+	}
+
+	// .testimonials__stars
+
+	&__stars {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: toRem(7);
+		margin-bottom: toRem(8);
+	}
+
+	// .testimonials__star
+
+	&__star {
+		font-size: toRem(17);
+		width: toRem(17);
+		height: toRem(17);
+		color: $blueColor;
+	}
+
+	// .testimonials__name
+
+	&__name {
+		color: $blackColor;
+		font-size: toRem(14);
+		font-weight: 500;
+		line-height: 1.48;
+		letter-spacing: toRem(1.4);
+		text-transform: uppercase;
+	}
+
+	// .testimonials__swiper-button
+
+	&__swiper-button {
+		position: absolute;
+		z-index: 2;
+		inset-block-start: 50%;
+		transform: translate(0, -50%);
+		font-size: toRem(22);
+		inline-size: toRem(22);
+		block-size: toRem(45);
+		color: $grayBluelightColor;
+		transition: color 0.3s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $blueColor;
+			}
+		}
+	}
+
+	// .testimonials__swiper-button--next
+
+	&__swiper-button--next {
+		inset-inline-start: 0;
+	}
+
+	// .testimonials__swiper-button--prev
+
+	&__swiper-button--prev {
+		inset-inline-end: 0;
+		&::before {
+			transform: rotate(180deg);
+		}
+	}
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}

@@ -1,0 +1,137 @@
+@use "../../scss/colors" as *;
+@use "../../scss/mixins" as *;
+@use "../../scss/fonts" as *;
+
+@use "../../scss/reset" as *;
+@use "../../scss/icons" as *;
+
+// Компоненти
+@use "../../scss/common" as *;
+
+.page {
+	// .page__hero
+
+	&__hero {
+	}
+}
+.hero {
+	background-color: $greyColor;
+	// .hero__container
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding-inline: toRem(20);
+		@include adaptiveValue("column-gap", 170, 10, 0, 1920, 1240);
+		@media (max-width: toEm(767.98)) {
+			padding-inline: toRem(10);
+		}
+		// column-gap: toRem(170);
+	}
+	&__wraper {
+		max-width: toRem(1300);
+		margin-left: 0;
+		margin-right: 0;
+		overflow: hidden;
+		@include adaptiveValue("padding-block-start", 68, 10);
+
+	}
+
+	// .hero__swiper
+
+	&__swiper {
+	}
+
+	// .hero__swiper-wrapper
+
+	&__swiper-wrapper {
+	}
+
+	// .hero__slide
+
+	&__slide {
+	}
+
+	// .hero__content
+
+	&__content {
+	}
+
+	// .hero__swiper-button
+
+	&__swiper-button {
+		block-size: toRem(127);
+		inline-size: toRem(66);
+		color: $grayBluelightColor;
+		transition: color 0.3s;
+		@include adaptiveValue("font-size", 127, 40);
+		@media (any-hover: hover) {
+			&:hover {
+				color: $blueColor;
+			}
+		}
+	}
+
+	// .hero__swiper-button--prev
+
+	&__swiper-button--prev {
+	}
+
+	// .hero__swiper-button--next
+
+	&__swiper-button--next {
+		&::before {
+			transform: rotate(-180deg);
+		}
+	}
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.content-slide {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: toRem(40);
+	padding-inline: toRem(20);
+	@media (max-width: toEm(767.98)) {
+		flex-direction: column;
+		text-align: center;
+		padding-inline: toRem(0);
+		gap: toRem(20);
+	}
+	// .content-slide__body
+	&__body {
+		flex: 0 0 50%;
+	}
+
+	// .content-slide__image
+
+	&__image {
+		align-self: flex-end;
+		flex: 1 0 50%;
+		@media (max-width: toEm(767.98)) {
+			align-self: center;
+		}
+		img {
+			inline-size: 100%;
+			block-size: 100%;
+			aspect-ratio: 612 / 529;
+			object-fit: cover;
+		}
+	}
+}
+.product-praise {
+	// .product-praise__title
+
+	&__title {
+	}
+
+	// .product-praise__button
+
+	&__button {
+	}
+}

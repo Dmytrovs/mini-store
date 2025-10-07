@@ -6,6 +6,12 @@
 @use 'reset' as *;
 @use 'icons' as *;
 
+// Компоненти
+@use "common" as*;
+
+//About
+@use "about" as*;
+
 
 // @import '@components/Header/header'; // SCSS компонента
 // @use "../components/Header/header.scss";
@@ -24,6 +30,7 @@ $maxWidthContainer: 1310;
 $containerPadding: 30;
 // Ширина спрацьовування першого брейкпоінту
 $containerWidth: $maxWidthContainer + $containerPadding;
+
 
 
 
@@ -58,4 +65,3 @@ body {
 .wrapper > main {
 	flex-grow: 1;
 }
-

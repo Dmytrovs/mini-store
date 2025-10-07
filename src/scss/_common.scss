@@ -1,0 +1,383 @@
+@use "../scss/colors" as *;
+@use "../scss/mixins" as *;
+@use "../scss/fonts" as *;
+
+@use "../scss/reset" as *;
+@use "../scss/icons" as *;
+
+.product-praise {
+  // .product-praise__title
+
+  &__title {
+    color: $blackColor;
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
+    letter-spacing: toRem(1.66);
+    line-height: 1.14;
+    text-transform: uppercase;
+    @include adaptiveValue("font-size", 83, 25);
+    &:not(:last-child) {
+      margin-bottom: toRem(40);
+      @media (max-width: toEm(767.98)) {
+        margin-bottom: toRem(20);
+      }
+    }
+    &--margin {
+      &:not(:last-child) {
+        @include adaptiveValue(" margin-bottom", 45, 15);
+      }
+      @media (max-width: toEm(767.98)) {
+        margin-bottom: toRem(20);
+      }
+    }
+  }
+
+  // .product-praise__button
+
+  &__button {
+    background-color: $blackColor;
+    color: $whiteColor;
+    font-size: toRem(14);
+    font-weight: 500;
+    line-height: 1.48;
+    letter-spacing: toRem(1.4);
+    text-transform: uppercase;
+    text-align: center;
+    padding: toRem(16) toRem(50);
+    transition: background-color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $blueColor;
+      }
+    }
+    &:focus,
+    &:active {
+      background-color: $blueColor;
+      outline: none;
+    }
+    @media (max-width: toEm(767.98)) {
+      padding: toRem(10) toRem(14);
+    }
+  }
+}
+
+.title {
+  color: $blackColor;
+  font-family: "Jost", sans-serif;
+  line-height: 1.14;
+  text-transform: uppercase;
+  letter-spacing: toRem(1.8);
+  @include adaptiveValue("font-size", 30, 25);
+}
+
+.button {
+  background-color: $blueColor;
+  text-align: center;
+  font-size: toRem(14);
+  font-weight: 500;
+  line-height: 1.48;
+  letter-spacing: toRem(1.4);
+  text-transform: uppercase;
+  color: $whiteColor;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  &--pading-inline50 {
+    @include adaptiveValue("padding-inline", 50, 15);
+    background-color: $blackColor;
+  }
+  @include adaptiveValue("padding-inline", 40, 15);
+  @include adaptiveValue("padding-block", 16, 12);
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $grayBluelightColor;
+      color: $blackColor;
+    }
+  }
+}
+
+//========================================================================================================================================================
+.products-section {
+  @include adaptiveValue("padding-block-start", 120, 25);
+  // .products-section__container
+
+  &__container {
+  }
+
+  // .products-section__header
+
+  &__header {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: toRem(30);
+      @media (max-width: toEm(767.98)) {
+        margin-bottom: toRem(15);
+      }
+    }
+    @media (min-width: toEm(767.98)) {
+      display: flex;
+      align-items: center;
+      column-gap: toRem(20);
+      justify-content: space-between;
+    }
+  }
+
+  // .products-section__title
+
+  &__title {
+    text-align: center;
+    @media (max-width: toEm(767.98)) {
+      &:not(:last-child) {
+        margin-bottom: toRem(7);
+      }
+    }
+  }
+
+  // .products-section__link
+
+  &__link {
+    color: $blackColor;
+    font-size: toRem(14);
+    font-weight: 500;
+    letter-spacing: toRem(1.48);
+    text-transform: uppercase;
+    margin-bottom: toRem(2);
+    line-height: 1.2;
+    border-bottom: 3px solid $greyRectangleColor;
+    transition:
+      color 0.3s ease-in-out,
+      border-bottom 0.3s ease-in-out;
+    will-change: border-bottom;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $blueColor;
+        border-bottom: 4px solid $blueColor;
+      }
+    }
+    @media (max-width: toEm(767.98)) {
+      margin-bottom: toRem(0);
+    }
+  }
+
+  // .products-section__slider
+
+  &__slider {
+  }
+
+  &__swiper-pagination {
+    display: flex;
+    gap: toRem(20);
+    justify-content: center;
+    @media (max-width: toEm(767.98)) {
+      gap: toRem(12);
+    }
+    .swiper-pagination-bullet {
+      inline-size: toRem(14);
+      block-size: toRem(14);
+      background-color: $graylightPaginationColor;
+      flex-shrink: 0;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: $darkGreyPaginationColor;
+    }
+  }
+  // .products-section__wrapper
+
+  &__wrapper {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 10);
+    }
+  }
+
+  // .products-section__slide
+
+  &__slide {
+  }
+
+  // .products-section__carts
+
+  &__carts {
+  }
+}
+
+.cards-products {
+  display: flex;
+  column-gap: toRem(20);
+  justify-content: space-between;
+  @media (max-width: toEm(767.98)) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: toRem(10);
+  }
+  // .cards-products__card
+
+  &__card {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    row-gap: toRem(10);
+    @media (any-hover: hover) {
+      &:hover .cards-products__image {
+        transform: scale(1.03);
+      }
+    }
+  }
+
+  // .cards-products__image
+
+  &__image {
+    aspect-ratio: 310 / 418;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s ease;
+    will-change: transform;
+  }
+
+  // .cards-products__descr
+
+  &__descr {
+    display: flex;
+    column-gap: toRem(20);
+    justify-content: space-between;
+    @include adaptiveValue("column-gap", 20, 10);
+    @include adaptiveValue("font-size", 20, 14);
+    @media (max-width: toEm(767.98)) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  // .cards-products__title
+
+  &__title {
+    color: $blackColor;
+    line-height: 1.2;
+    letter-spacing: toRem(1.2);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  // .cards-products__price
+
+  &__price {
+    color: $blueColor;
+    line-height: 1.2;
+    letter-spacing: toRem(0.6);
+  }
+
+  // .cards-products__button
+
+  &__button {
+    opacity: 0;
+    background-color: $blackColor;
+    color: $whiteColor;
+    position: absolute;
+    inset-block-end: 15.26%;
+    inset-inline-start: 50%;
+    transform: translate(-50%, -15.26%);
+    display: inline-flex;
+    column-gap: toRem(8);
+    padding-inline: toRem(30);
+    padding-block: toRem(7);
+    font-size: toRem(14);
+    font-weight: 500;
+    align-items: center;
+    letter-spacing: toRem(1.4);
+    text-transform: uppercase;
+    white-space: nowrap;
+    text-align: center;
+    transition:
+      opacity 0.3s ease-in,
+      color 0.3s ease-in;
+    @media (max-width: toEm(767.98)) {
+      font-size: toRem(12);
+    }
+    span {
+      font-size: toRem(17);
+      flex-shrink: 0;
+      @media (max-width: toEm(767.98)) {
+        font-size: toRem(14);
+      }
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: $blueColor;
+      }
+    }
+    @media (any-hover: hover) {
+      .cards-products__card:hover & {
+        opacity: 1;
+      }
+    }
+    @media (max-width: toEm(767.98)) {
+      opacity: 1;
+    }
+  }
+}
+
+//========================================================================================================================================================
+//header-content
+
+.header-content {
+  background-color: $greyColor;
+  text-align: center;
+  @include adaptiveValue("padding-block", 77, 27);
+  // .header-content__title
+
+  &__title {
+    color: $blackColor;
+    font-family: "Jost", sans-serif;
+    font-weight: 300;
+    letter-spacing: toRem(1.66);
+    line-height: 1.14;
+    text-transform: uppercase;
+    @include adaptiveValue("font-size", 83, 30);
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+
+  // .header-content__sub-nav-title
+
+  &__sub-nav-title {
+  }
+}
+.title-nav-sub {
+  font-weight: 400;
+  line-height: 1.38; /* 22.08px */
+  letter-spacing: toRem(0.48);
+  text-transform: capitalize;
+
+  // .title-nav-sub__home
+
+  &__home {
+    transition: text-decoration 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // .title-nav-sub__arrow
+
+  &__arrow {
+  }
+
+  // .title-nav-sub__current-page
+
+  &__current-page {
+    color: $blueColor;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    transition: color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+}

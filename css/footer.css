@@ -191,6 +191,30 @@ textarea {
 }
 
 @media (min-width: 90em) {
+  .footer {
+    -webkit-padding-before: 6.25rem;
+            padding-block-start: 6.25rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 90em) {
+  .footer {
+    -webkit-padding-before: clamp( 1.5625rem , 0.2232142857rem  +  6.6964285714vw , 6.25rem );
+            padding-block-start: clamp( 1.5625rem , 0.2232142857rem  +  6.6964285714vw , 6.25rem );
+  }
+  @supports (padding-block-start: clamp( 1.5625rem , 0.2232142857rem  +  6.6964285714vw , 6.25rem )) {
+    .footer {
+      -webkit-padding-before: clamp( 1.5625rem , 0.2232142857rem  +  6.6964285714vw , 6.25rem );
+              padding-block-start: clamp( 1.5625rem , 0.2232142857rem  +  6.6964285714vw , 6.25rem );
+    }
+  }
+}
+@media (max-width: 20em) {
+  .footer {
+    -webkit-padding-before: 1.5625rem;
+            padding-block-start: 1.5625rem;
+  }
+}
+@media (min-width: 90em) {
   .footer__top {
     margin-bottom: 5rem;
   }
@@ -294,26 +318,7 @@ textarea {
   transition: color 0.3s;
   margin-bottom: 0.625rem;
   color: #272727;
-}
-@media (min-width: 90em) {
-  .company-footer__logo {
-    font-size: 2.0625rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 90em) {
-  .company-footer__logo {
-    font-size: clamp( 1.75rem , 1.6607142857rem  +  0.4464285714vw , 2.0625rem );
-  }
-  @supports (font-size: clamp( 1.75rem , 1.6607142857rem  +  0.4464285714vw , 2.0625rem )) {
-    .company-footer__logo {
-      font-size: clamp( 1.75rem , 1.6607142857rem  +  0.4464285714vw , 2.0625rem );
-    }
-  }
-}
-@media (max-width: 20em) {
-  .company-footer__logo {
-    font-size: 1.75rem;
-  }
+  font-size: 2.0625rem;
 }
 @media (any-hover: hover) {
   .company-footer__logo:hover {
@@ -417,6 +422,15 @@ textarea {
 .menu-footer__title::-webkit-details-marker {
   display: none;
 }
+.menu-footer__title:focus, .menu-footer__title:active {
+  color: #72AEC8;
+  outline: none;
+}
+@media (max-width: 47.99875em) {
+  .menu-footer__title {
+    font-size: 1.5625rem;
+  }
+}
 .menu-footer__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -440,9 +454,18 @@ textarea {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
+.menu-footer__link:focus, .menu-footer__link:active {
+  color: #72AEC8;
+}
 @media (any-hover: hover) {
   .menu-footer__link:hover {
     color: #72AEC8;
+    outline: none;
+  }
+}
+@media (max-width: 47.99875em) {
+  .menu-footer__link {
+    font-size: 1.25rem;
   }
 }
 .contact-footer {

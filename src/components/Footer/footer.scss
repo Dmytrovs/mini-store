@@ -7,6 +7,7 @@
 
 .footer {
   // .footer_company
+  @include adaptiveValue("padding-block-start", 100, 25);
 
   &_company {
   }
@@ -62,7 +63,7 @@
     transition: color 0.3s;
     margin-bottom: toRem(10);
     color: $blackColor;
-    @include adaptiveValue("font-size", 33, 28);
+    font-size: toRem(33);
     @media (any-hover: hover) {
       &:hover {
         color: $blueColor;
@@ -120,13 +121,6 @@
   &__item {
     min-width: toRem(128);
     color: $blackColor;
-    // &:nth-child(2) {
-    //   min-width: toRem(171);
-    //   //  white-space: nowrap;
-    // }
-    // &:nth-child(3) {
-    //   min-width: toRem(242);
-    // }
   }
 
   // .menu-footer__title
@@ -143,6 +137,14 @@
     &::-webkit-details-marker {
       display: none;
     }
+    &:focus,
+		&:active {
+			color: $blueColor;
+      outline: none;
+		}
+    @media (max-width: toEm(767.98)) {
+      font-size: toRem(25);
+  }
   }
 
   // .menu-footer__list
@@ -170,10 +172,18 @@
     flex-shrink: 0;
     white-space: nowrap;
     transition: color 0.3s;
+    &:focus,
+		&:active {
+			color: $blueColor;
+		}
     @media (any-hover: hover) {
       &:hover {
         color: $blueColor;
+        outline: none;
       }
+    }
+    @media (max-width: toEm(767.98)) {
+      font-size: toRem(20);
     }
   }
 
@@ -291,10 +301,3 @@
     flex-shrink: 0;
   }
 }
-
-// @media (min-width: 768px) {
-//   [data-spollers] summary {
-//     pointer-events: none;
-//     cursor:default;
-//   }
-// }

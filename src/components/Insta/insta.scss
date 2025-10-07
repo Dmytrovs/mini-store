@@ -1,0 +1,92 @@
+@use "../../scss/colors" as *;
+@use "../../scss/mixins" as *;
+@use "../../scss/fonts" as *;
+
+@use "../../scss/reset" as *;
+@use "../../scss/icons" as *;
+
+// Компоненти
+@use "../../scss/common" as *;
+
+.insta {
+  // .insta__container
+
+  &__container {
+    text-align: center;
+    @include adaptiveValue("padding-block-start", 120, 25);
+  }
+
+  // .insta__title
+
+  &__title {
+    &:not(:last-child) {
+      margin-block-end: toRem(30);
+    }
+  }
+
+  // .insta__items
+
+  &__items {
+    @media (max-width: toEm(1200)) {
+      flex-wrap: wrap;
+    }
+    @include adaptiveValue("gap", 20, 10);
+    @media (min-width: toEm(768)) {
+      display: flex;
+
+      justify-content: center;
+    }
+    @media (max-width: toEm(767.98)) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // .insta__item
+
+  &__item {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      background-color:   rgba(0, 0, 0, 0.4);
+      transition: opacity 0.5s ease;
+    }
+    &::before {
+      position: absolute;
+      inset-block-start: 50%;
+      inset-inline-start: 50%;
+      transform: translate(-50%, -50%);
+      font-size: toRem(30);
+      color: $whiteColor;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease,   visibility 0.5s ease;
+      z-index: 2;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+        &::before {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+          visibility: visible;
+          
+        }
+      }
+    }
+  }
+
+  // .insta__image
+
+  &__image {
+    aspect-ratio: 244 / 244;
+    object-fit: cover;
+    width: 100%;
+  }
+}

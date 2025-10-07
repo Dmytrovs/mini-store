@@ -193,6 +193,8 @@ textarea {
 .header {
   padding-block: 1.5625rem;
   color: #272727;
+  position: relative;
+  z-index: 2;
 }
 .header__container {
   display: -webkit-box;
@@ -412,6 +414,7 @@ textarea {
           transform: rotate(180deg);
 }
 .menu__subnav {
+  background-color: #D3D3D3;
   position: absolute;
   top: calc(100% + 0.5rem);
   left: 0;
@@ -440,7 +443,7 @@ textarea {
 @media (max-width: 47.99875rem) {
   .menu__subnav {
     position: relative;
-    background-color: #72AEC8;
+    background-color: #EDF1F3;
     font-size: 1.5625rem;
     top: 0;
   }
@@ -458,9 +461,11 @@ textarea {
     background-color: #72AEC8;
   }
 }
-.menu__subnav-item a:focus, .menu__subnav-item a:active {
-  background-color: #72AEC8;
-  outline: none;
+@media (min-width: 47.99875rem) {
+  .menu__subnav-item a:focus, .menu__subnav-item a:active {
+    background-color: #72AEC8;
+    outline: none;
+  }
 }
 .menu__subnav-link {
   width: 100%;
