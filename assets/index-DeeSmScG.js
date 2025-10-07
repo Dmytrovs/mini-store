@@ -14,7 +14,7 @@
             <button type="button" class="menu__toggle-btn" aria-expanded="false" aria-label="Toggle sub menu">Pages\r
               <span class="_icon-ion_caret-down"></span></button>\r
             <ul class="menu__subnav">\r
-              <li class="menu__subnav-item"><a href="./about.html" class="menu__subnav-link">About us</a></li>\r
+              <li class="menu__subnav-item"><a href="/mini-store/about.html" class="menu__subnav-link">About us</a></li>\r
               <li class="menu__subnav-item"><a href="#" class="menu__subnav-link">Shop</a></li>\r
               <li class="menu__subnav-item"><a href="#" class="menu__subnav-link">Product</a></li>\r
               <li class="menu__subnav-item"><a href="#" class="menu__subnav-link">Card</a></li>\r
