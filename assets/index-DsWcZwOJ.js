@@ -7,14 +7,14 @@
       <!-- <button type="button" class="menu__icon icon-menu"><span></span></button> -->\r
       <nav class="menu__body">\r
         <ul class="menu__list">\r
-          <li class="menu__item"><a href="#" class="menu__link">Home</a></li>\r
+          <li class="menu__item"><a href="/" class="menu__link">Home</a></li>\r
 \r
 \r
           <li class="menu__item">\r
             <button type="button" class="menu__toggle-btn" aria-expanded="false" aria-label="Toggle sub menu">Pages\r
               <span class="_icon-ion_caret-down"></span></button>\r
             <ul class="menu__subnav">\r
-              <li class="menu__subnav-item"><a href="about.html" class="menu__subnav-link">About us</a></li>\r
+              <li class="menu__subnav-item"><a href="./about.html" class="menu__subnav-link">About us</a></li>\r
               <li class="menu__subnav-item"><a href="#" class="menu__subnav-link">Shop</a></li>\r
               <li class="menu__subnav-item"><a href="#" class="menu__subnav-link">Product</a></li>\r
               <li class="menu__subnav-item"><a href="#" class="menu__subnav-link">Card</a></li>\r
@@ -25,7 +25,7 @@
             </ul>\r
 \r
           </li>\r
-          <li class="menu__item"><a href="about.html" class="menu__link">About</a></li>\r
+          <li class="menu__item"><a href="./about.html" class="menu__link">About</a></li>\r
           <li class="menu__item"><a href="#" class="menu__link">Blogs</a></li>\r
           <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>\r
         </ul>\r
