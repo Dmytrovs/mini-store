@@ -17,7 +17,7 @@
               <li class="menu__subnav-item"><a href="about.html" class="menu__subnav-link">About us</a></li>\r
               <li class="menu__subnav-item"><a href="shop.html" class="menu__subnav-link">Shop</a></li>\r
               <li class="menu__subnav-item"><a href="product.html" class="menu__subnav-link">Product</a></li>\r
-              <li class="menu__subnav-item"><a href="#" class="menu__subnav-link">Card</a></li>\r
+              <li class="menu__subnav-item"><a href="cart.html" class="menu__subnav-link">Cart</a></li>\r
               <li class="menu__subnav-item"><a href="#" class="menu__subnav-link">Checkout</a></li>\r
               <li class="menu__subnav-item"><a href="#" class="menu__subnav-link">Blog</a></li>\r
               <li class="menu__subnav-item"><a href="#" class="menu__subnav-link">Blog-Post</a></li>\r
