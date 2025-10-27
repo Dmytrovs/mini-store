@@ -708,7 +708,7 @@
   <div class="latest__container">\r
     <div class="latest__header">\r
       <h2 class="latest__title title">Latest Posts</h2>\r
-      <button class="latest__button">Read blogs</button>\r
+      <a href="blog.html" class="latest__button">Read blogs</a>\r
     </div>\r
     <div class="latest__items">\r
       <article class="latest__post-card card-post">\r
