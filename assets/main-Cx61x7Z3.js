@@ -19,14 +19,14 @@
               <li class="menu__subnav-item"><a href="product.html" class="menu__subnav-link">Product</a></li>\r
               <li class="menu__subnav-item"><a href="cart.html" class="menu__subnav-link">Cart</a></li>\r
               <li class="menu__subnav-item"><a href="checkout.html" class="menu__subnav-link">Checkout</a></li>\r
-              <li class="menu__subnav-item"><a href="#" class="menu__subnav-link">Blog</a></li>\r
+              <li class="menu__subnav-item"><a href="blog.html" class="menu__subnav-link">Blog</a></li>\r
               <li class="menu__subnav-item"><a href="#" class="menu__subnav-link">Blog-Post</a></li>\r
               <li class="menu__subnav-item"><a href="#" class="menu__subnav-link">Contact</a></li>\r
             </ul>\r
 \r
           </li>\r
           <li class="menu__item"><a href="about.html" class="menu__link">About</a></li>\r
-          <li class="menu__item"><a href="#" class="menu__link">Blogs</a></li>\r
+          <li class="menu__item"><a href="blog.html" class="menu__link">Blogs</a></li>\r
           <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>\r
         </ul>\r
       </nav>\r
