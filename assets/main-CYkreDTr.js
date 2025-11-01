@@ -74,7 +74,7 @@
         </div>\r
       </div>\r
       <div data-spollers="767.98,max" class="footer__menu menu-footer">\r
-        <details class="menu-footer__item ">\r
+        <details class="menu-footer__item">\r
           <summary data-spoller-close class="menu-footer__title">Quick links</summary>\r
           <ul class="menu-footer__list">\r
             <li class="menu-footer__element"><a href="№" class="menu-footer__link">Home</a></li>\r
