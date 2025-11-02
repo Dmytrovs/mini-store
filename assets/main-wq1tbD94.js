@@ -81,11 +81,11 @@
         <details data-aos="fade-up" data-aos-delay="200" class="menu-footer__item">\r
           <summary data-spoller-close class="menu-footer__title">Quick links</summary>\r
           <ul class="menu-footer__list">\r
-            <li class="menu-footer__element"><a href="№" class="menu-footer__link">Home</a></li>\r
-            <li class="menu-footer__element"><a href="#" class="menu-footer__link">About</a></li>\r
-            <li class="menu-footer__element"><a href="#" class="menu-footer__link">Shop</a></li>\r
-            <li class="menu-footer__element"><a href="#" class="menu-footer__link">Blogs</a></li>\r
-            <li class="menu-footer__element"><a href="#" class="menu-footer__link">Contact</a></li>\r
+            <li class="menu-footer__element"><a href="index.html" class="menu-footer__link">Home</a></li>\r
+            <li class="menu-footer__element"><a href="about.html" class="menu-footer__link">About</a></li>\r
+            <li class="menu-footer__element"><a href="shop.html" class="menu-footer__link">Shop</a></li>\r
+            <li class="menu-footer__element"><a href="blog.html" class="menu-footer__link">Blogs</a></li>\r
+            <li class="menu-footer__element"><a href="contact.html" class="menu-footer__link">Contact</a></li>\r
           </ul>\r
         </details>\r
         <details data-aos="fade-up" data-aos-delay="500" class="menu-footer__item ">\r
