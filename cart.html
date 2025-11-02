@@ -3,11 +3,12 @@
 
 <head>
   <meta charset="UTF-8" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <base href="/mini-store/">
   <title>Cart</title>
-  <script type="module" crossorigin src="/mini-store/assets/main-Cq2-Uqxr.js"></script>
+  <script type="module" crossorigin src="/mini-store/assets/main-Df9vuM-e.js"></script>
   <link rel="stylesheet" crossorigin href="/mini-store/assets/main-CCiEIEh2.css">
 </head>
 
@@ -18,8 +19,8 @@
       <section class="page__about about">
         <div class="about__content">
           <div class="header-content">
-            <div class="header-content__title">Cart</div>
-            <div class="header-content__sub-nav-title title-nav-sub">
+            <div data-aos="fade-up" class="header-content__title">Cart</div>
+            <div data-aos="fade-up" class="header-content__sub-nav-title title-nav-sub">
               <a href="index.html" class="title-nav-sub__home">Home</a>
               <span class="title-nav-sub__arrow">&gt;</span>
               <a href="cart.html" class="title-nav-sub__current-page">Cart</a>
@@ -30,12 +31,12 @@
       <section class="cart">
         <div class="cart__container">
           <div class="cart__body">
-            <div class="header__titles">
+            <div data-aos="fade-up" data-aos-delay="0" class="header__titles">
               <h3 class="header__product">Product</h3>
               <h3 class="header__quantity">Quantity</h3>
               <h3 class="header__subtotal">Subtotal</h3>
             </div>
-            <div class="item-cart__item">
+            <div data-aos="fade-up" data-aos-delay="100" class="item-cart__item">
               <div class="item">
                 <div class="item__content">
                   <picture class="item__picture">
@@ -64,7 +65,7 @@
                 </div>
               </div>
             </div>
-            <div class="item-cart__item">
+            <div data-aos="fade-up" data-aos-delay="200" class="item-cart__item">
               <div class="item">
                 <div class="item__content">
                   <picture class="item__picture">
@@ -96,22 +97,22 @@
           </div>
           <div class="cart__total">
             <div class="total-cart">
-              <h5 class="total-cart__title">Cart totals</h5>
+              <h5 data-aos="fade-right" data-aos-delay="200" class="total-cart__title">Cart totals</h5>
               <div class="total-cart__body">
-                <div class="total-cart__content">
+                <div data-aos="fade-right" data-aos-delay="300" class="total-cart__content">
                   <h5 class="total-cart__label ">Subtotal</h5>
                   <div class="total-cart__cost">$1500.00</div>
                 </div>
-                <div class="total-cart__content">
+                <div data-aos="fade-right" data-aos-delay="400" class="total-cart__content">
                   <h5 class="total-cart__label ">Total</h5>
                   <div class="total-cart__cost">$1500.00</div>
                 </div>
               </div>
             </div>
             <div class="cart__actions">
-              <button type="button" class="cart__button button button--pading-inline50">Update cart</button>
-              <button type="button" class="cart__button button button--pading-inline50">Continue shopping</button>
-              <button type="button" class="cart__button button button--pading-inline50">Proceed to
+              <button data-aos="fade-up" data-aos-delay="300" type="button" class="cart__button button button--pading-inline50">Update cart</button>
+              <button data-aos="fade-up" data-aos-delay="400" type="button" class="cart__button button button--pading-inline50">Continue shopping</button>
+              <button data-aos="fade-up" data-aos-delay="500" type="button" class="cart__button button button--pading-inline50">Proceed to
                 checkout</button>
             </div>
           </div>
