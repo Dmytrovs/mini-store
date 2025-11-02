@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/mini-store/">
+  <title>Checkout</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div id="header"></div>
+    <main class="page">
+      <section class="page__checkout">
+        <div class="checkout__content">
+          <div class="header-content">
+            <div data-aos="fade-up" class="header-content__title">Checkout</div>
+            <div data-aos="fade-up" data-aos-delay="200" class="header-content__sub-nav-title title-nav-sub">
+              <a href="index.html" class="title-nav-sub__home">Home</a>
+              <span class="title-nav-sub__arrow">&gt;</span>
+              <a href="cart.html" class="title-nav-sub__current-page">Checkout</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <form action="#" method="POST" class="checkout-form">
+        <div class="checkout-form__container">
+          <div class="checkout-form__section">
+            <section class="checkout-form__section-billing">
+              <h2 data-aos="fade-up" data-aos-delay="0" class="checkout-form__title">Billing Details</h2>
+              <div data-aos="fade-up" data-aos-delay="50" class="checkout-form__group">
+                <label for="first-name" class="checkout-form__label">First name *</label>
+                <input type="text" name="first-name" data-error="Error" placeholder="" required id="first-name"
+                  class="checkout-form__input">
+              </div>
+              <div data-aos="fade-up" data-aos-delay="100" class="checkout-form__group">
+                <label for="last-name" class="checkout-form__label">Last name *</label>
+                <input type="text" name="last-name" data-error="Error" placeholder="" required id="last-name"
+                  class="checkout-form__input">
+              </div>
+              <div data-aos="fade-up" data-aos-delay="150" class="checkout-form__group">
+                <label for="company-name" class="checkout-form__label">Company name (optional)</label>
+                <input type="text" name="company-name" data-error="Error" placeholder="" id="company-name"
+                  class="checkout-form__input">
+              </div>
+              <div data-aos="fade-up" data-aos-delay="200" class="checkout-form__group">
+                <label id="country-region-label" class="checkout-form__label">Country / Region *</label>
+                <div class="custom-select" data-select>
+                  <button type="button" class="custom-select__trigger" aria-labelledby="country-region-label"
+                    aria-haspopup="listbox" aria-expanded="false" data-select-trigger>
+                    United States (US)
+                  </button>
+                  <ul class="custom-select__list" role="listbox" tabindex="-1" hidden data-select-list>
+                    <li class="custom-select__option" role="option" data-value="US">United States (US)</li>
+                    <li class="custom-select__option" role="option" data-value="GR">Germany</li>
+                  </ul>
+                  <input type="hidden" name="country-region" value="US" data-select-input>
+                </div>
+
+              </div>
+              <div data-aos="fade-up" data-aos-delay="250" class="checkout-form__group">
+                <label for="street" class="checkout-form__label">Street address *</label>
+                <input type="text" name="street" data-error="Error" placeholder="House number and street name" required
+                  id="street" class="checkout-form__input checkout-form__input-margin">
+                <input type="text" name="appartment" data-error="Error" placeholder="Appartments, suite, etc." required
+                  class="checkout-form__input checkout-form__input--sub">
+              </div>
+              <div data-aos="fade-up" data-aos-delay="300" class="checkout-form__group">
+                <label for="town-city" class="checkout-form__label">Town / City *</label>
+                <input type="text" name="town-city" data-error="Error" required id="town-city"
+                  class="checkout-form__input">
+              </div>
+              <div data-aos="fade-up" data-aos-delay="350" class="checkout-form__group">
+                <label id="state-label" class="checkout-form__label">Country / Region *</label>
+                <div class="custom-select" data-select>
+                  <button type="button" class="custom-select__trigger" aria-labelledby="state-label"
+                    aria-haspopup="listbox" aria-expanded="false" data-select-trigger>
+                    Florida
+                  </button>
+                  <ul class="custom-select__list" role="listbox" tabindex="-1" hidden data-select-list>
+                    <li class="custom-select__option" role="option" data-value="Fl">Florida</li>
+                    <li class="custom-select__option" role="option" data-value="US">California</li>
+                  </ul>
+                  <input type="hidden" name="country-region" value="US" data-select-input>
+                </div>
+
+              </div>
+              <div data-aos="fade-up" data-aos-delay="400" class="checkout-form__group">
+                <label for="zip-code" class="checkout-form__label">ZIP Code *</label>
+                <input type="text" name="zip-code" data-error="Error" required id="zip-code"
+                  class="checkout-form__input">
+              </div>
+              <div data-aos="fade-up" data-aos-delay="450" class="checkout-form__group">
+                <label for="phone" class="checkout-form__label">Phone *</label>
+                <input type="tel" name="phone" data-error="Error" required id="phone" class="checkout-form__input">
+              </div>
+              <div data-aos="fade-up" data-aos-delay="500" class="checkout-form__group">
+                <label for="email" class="checkout-form__label">Email address *</label>
+                <input type="email" name="email" data-error="Error" required id="email" class="checkout-form__input">
+              </div>
+            </section>
+            <section class="checkout-form__section-additional">
+              <h2 data-aos="fade-up" data-aos-delay="0" class="checkout-form__title">Additional Information</h2>
+              <div data-aos="fade-up" data-aos-delay="100" class="checkout-form__group">
+                <label for="order-notes" class="checkout-form__label">Order notes (optional)</label>
+                <textarea name="order-notes" id="order-notes"
+                  placeholder="Notes about your order. Like special notes for delivery."
+                  class="checkout-form__textarea"></textarea>
+              </div>
+            </section>
+          </div>
+          <section class="checkout-form__cart-items">
+            <div class="checkout-form__total">
+              <div class="total-cart">
+                <h5 data-aos="fade-up" data-aos-delay="100" class="total-cart__title">Cart totals</h5>
+                <div class="total-cart__body">
+                  <div data-aos="fade-up" data-aos-delay="200" class="total-cart__content">
+                    <h5 class="total-cart__label ">Subtotal</h5>
+                    <div class="total-cart__cost">$1500.00</div>
+                  </div>
+                  <div data-aos="fade-up" data-aos-delay="300" class="total-cart__content">
+                    <h5 class="total-cart__label ">Total</h5>
+                    <div class="total-cart__cost">$1500.00</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="350" class="checkout-form__payment payment-radio">
+              <div class="payment-radio__option">
+                <input type="radio" name="payment" id="bank-transfer" value="bank-transfer" checked
+                  class="payment-radio__btn">
+                <label for="bank-transfer" class="payment-radio__label">Direct bank transfer</label>
+              </div>
+              <div class="payment-radio__option">
+                <input type="radio" name="payment" id="check" value="bank-transfer" class="payment-radio__btn">
+                <label for="check" class="payment-radio__label">Check payments</label>
+              </div>
+              <div class="payment-radio__option">
+                <input type="radio" name="payment" id="cash" value="bank-transfer" class="payment-radio__btn">
+                <label for="cash" class="payment-radio__label">Cash on delivery</label>
+              </div>
+              <div class="payment-radio__option">
+                <input type="radio" name="payment" id="pay" value="bank-transfer" class="payment-radio__btn">
+                <label for="pay" class="payment-radio__label">PayPal</label>
+              </div>
+            </div>
+            <button data-aos="zoom-in" data-aos-delay="400" class="checkout-form__btn button button--pading-inline50">Place an oerder</button>
+          </section>
+        </div>
+      </form>
+      <section id="subscribe"></section>
+      <section id="insta"></section>
+    </main>
+    <div id="footer"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="/src/main.js"></script>
+
+</body>
+
+</html>

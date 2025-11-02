@@ -88,20 +88,7 @@
   // .company-footer__cocial
 
   &__cocial {
-    display: flex;
-    column-gap: toRem(30);
-  }
-}
-.social-footer {
-  // .social-footer__link
 
-  &__link {
-    transition: color 0.3s;
-    @media (any-hover: hover) {
-      &:hover {
-        color: $blueColor;
-      }
-    }
   }
 }
 
@@ -126,6 +113,7 @@
   // .menu-footer__title
 
   &__title {
+    cursor: pointer;
     margin-bottom: toRem(10);
     font-size: toRem(20);
     font-weight: 400;
@@ -134,6 +122,11 @@
     letter-spacing: toRem(1.2);
     white-space: nowrap;
     list-style: none;
+    //.menu-footer__icons {
+    //  align-items: flex-start;
+		//		transform: rotate(-90deg);
+    //}
+    &::marker,
     &::-webkit-details-marker {
       display: none;
     }
@@ -192,6 +185,7 @@
   &__contact {
   }
 }
+
 .contact-footer {
   display: flex;
   flex-direction: column;

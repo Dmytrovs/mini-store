@@ -334,25 +334,6 @@ textarea {
   letter-spacing: 0.03rem;
   line-height: 1.38;
 }
-.company-footer__cocial {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-column-gap: 1.875rem;
-     -moz-column-gap: 1.875rem;
-          column-gap: 1.875rem;
-}
-
-.social-footer__link {
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-@media (any-hover: hover) {
-  .social-footer__link:hover {
-    color: #72AEC8;
-  }
-}
-
 .menu-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -410,6 +391,7 @@ textarea {
   color: #272727;
 }
 .menu-footer__title {
+  cursor: pointer;
   margin-bottom: 0.625rem;
   font-size: 1.25rem;
   font-weight: 400;
@@ -419,7 +401,7 @@ textarea {
   white-space: nowrap;
   list-style: none;
 }
-.menu-footer__title::-webkit-details-marker {
+.menu-footer__title::marker, .menu-footer__title::-webkit-details-marker {
   display: none;
 }
 .menu-footer__title:focus, .menu-footer__title:active {

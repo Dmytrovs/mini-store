@@ -1,0 +1,268 @@
+@use "../scss/colors" as *;
+@use "../scss/mixins" as *;
+@use "../scss/fonts" as *;
+
+@use "../scss/reset" as *;
+@use "../scss/icons" as *;
+
+// Компоненти
+@use "../scss/common" as *;
+
+.checkout-form {
+  @include adaptiveValue("padding-block-start", 120, 25);
+  // .checkout-form__section
+  &__container {
+  }
+  &__section {
+    display: flex;
+    @include adaptiveValue("gap", 20, 10);
+    @media (max-width: toEm(767.98)) {
+      flex-direction: column;
+    }
+  }
+
+  // .checkout-form__section-billing
+
+  &__section-billing {
+    flex-basis: toRem(640);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(30);
+    @media (max-width: toEm(767.98)) {
+      gap: toRem(15);
+      flex-basis: 0;
+    }
+  }
+
+  // .checkout-form__title
+
+  &__title {
+    font-family: "Jost", sans-serif;
+    @include adaptiveValue("font-size", 30, 20);
+    line-height: 1.14;
+    letter-spacing: toRem(0.06);
+    text-transform: uppercase;
+    color: $blackColor;
+  }
+
+  // .checkout-form__group
+
+  &__group {
+  }
+
+  // .checkout-form__label
+
+  &__label {
+    font-weight: 300;
+    line-height: 1.38;
+    letter-spacing: toRem(0.03);
+    display: block;
+    margin-bottom: toRem(10);
+  }
+
+  // .checkout-form__input
+
+  &__input {
+    border: 1px solid $inputGreyLightColor;
+    max-height: toRem(62);
+    @include adaptiveValue(" padding", 20, 10);
+    &::placeholder {
+      font-weight: 300;
+      line-height: 1.38;
+      letter-spacing: toRem(0.03);
+    }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border-color: $blackColor;
+    }
+  }
+
+  &__input-margin {
+    margin-bottom: toRem(10);
+    @media (max-width: toEm(767.98)) {
+      margin-bottom: toRem(5);
+    }
+  }
+  // .checkout-form__select
+
+  &__select {
+    display: flex;
+    border: 1px solid $inputGreyLightColor;
+    padding: toRem(20);
+    max-height: toRem(62);
+    width: 100%;
+    appearance: none;
+    font-weight: 300;
+    line-height: 1.38;
+    letter-spacing: toRem(0.03);
+  }
+
+  // .checkout-form__input--sub
+
+  &__input--sub {
+  }
+
+  // .checkout-form__section-additional
+
+  &__section-additional {
+    flex-basis: toRem(640);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(30);
+    @media (max-width: toEm(767.98)) {
+      gap: toRem(15);
+      flex-basis: 0;
+    }
+  }
+
+  // .checkout-form__textarea
+
+  &__textarea {
+    font-weight: 300;
+    line-height: 1.38;
+    letter-spacing: toRem(0.03);
+    border: 1px solid $inputGreyLightColor;
+    padding: toRem(20);
+    min-height: toRem(62);
+    height: toRem(62);
+    max-height: toRem(320);
+    resize: vertical;
+    overflow-y: hidden;
+    @include adaptiveValue("font-size", 16, 12);
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border-color: $blackColor;
+    }
+  }
+
+  // .checkout-form__cart-items
+
+  &__cart-items {
+    @include adaptiveValue("padding-block-start", 120, 25);
+  }
+
+  // .checkout-form__total
+
+  &__total {
+    .total-cart {
+      padding-block-start: 0;
+    }
+    @include adaptiveValue("margin-bottom", 30, 15);
+  }
+
+  // .checkout-form__payment
+
+  &__payment {
+    @include adaptiveValue("margin-bottom", 30, 15);
+  }
+
+  // .checkout-form__btn
+
+  &__btn {
+  }
+}
+.payment-radio {
+  // .payment-radio__option
+
+  &__option {
+    display: flex;
+    width: toRem(176);
+    min-width: toRem(176);
+    max-width: toRem(176);
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  // .payment-radio__btn
+
+  &__btn {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  // .payment-radio__label
+
+  &__label {
+    position: relative;
+    padding-left: toRem(25);
+    cursor: pointer;
+    font-weight: 300;
+    line-height: 1.4;
+    transition: color 0.3s;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: toRem(14);
+      height: toRem(14);
+      border: 1px solid $inputGreyLightColor;
+      border-radius: 50%;
+      background-color: #fff;
+      font-family: "icons" !important;
+      font-size: toRem(14);
+      text-align: center;
+      line-height: toRem(14);
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: $blueColor;
+      }
+    }
+  }
+
+  &__btn:checked + &__label::before {
+    content: "\e909";
+    color: $blueColor;
+  }
+}
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  &__trigger {
+    width: 100%;
+    @include adaptiveValue(" padding", 20, 10);
+    font-weight: 300;
+    letter-spacing: toRem(0.03);
+    border: 1px solid $inputGreyLightColor;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  &__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid $inputGreyLightColor;
+    background-color: #fff;
+  }
+
+  &__option {
+    padding: toRem(15) toRem(20);
+    font-weight: 300;
+    letter-spacing: toRem(0.03);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover,
+    &[aria-selected="true"] {
+      background-color: $blueColor;
+    }
+  }
+}

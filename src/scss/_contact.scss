@@ -1,0 +1,242 @@
+@use "../scss/colors" as *;
+@use "../scss/mixins" as *;
+@use "../scss/fonts" as *;
+
+@use "../scss/reset" as *;
+@use "../scss/icons" as *;
+
+// Компоненти
+@use "../scss/common" as *;
+
+.contact-questions {
+  @include adaptiveValue("padding-block-start", 120, 25);
+  // .contact-questions__container
+
+  &__container {
+    display: flex;
+    gap: toRem(20);
+    @media (max-width: toEm(767.98)) {
+      flex-direction: column;
+      gap: toRem(30);
+    }
+  }
+}
+.contact-info {
+  flex-basis: toRem(640);
+  @media (max-width: toEm(767.98)) {
+    flex-basis: 0;
+  }
+  // .contact-info__title
+
+  &__title {
+    margin-bottom: toRem(10);
+    @media (max-width: toEm(767.98)) {
+      text-align: center;
+    }
+  }
+
+  // .contact-info__descr
+
+  &__descr {
+    @include adaptiveValue("margin-bottom", 30, 15);
+    font-weight: 300;
+    line-height: 1.38;
+    letter-spacing: toRem(0.03);
+    @media (max-width: toEm(767.98)) {
+      text-align: center;
+    }
+  }
+
+  // .contact-info__body
+
+  &__body {
+    display: flex;
+    gap: toRem(20);
+    @media (max-width: toEm(425)) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    @media (max-width: toEm(767.98)) {
+      justify-content: space-between;
+      .contact:nth-child(2n) {
+        text-align: right;
+      }
+    }
+    @media (max-width: toEm(425)) {
+      justify-content: space-between;
+      .contact:nth-child(2n) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.questions-form {
+  flex-basis: toRem(640);
+  @media (max-width: toEm(767.98)) {
+    flex-basis: 0;
+  }
+  // .questions-form__title
+
+  &__title {
+    margin-bottom: toRem(10);
+    @media (max-width: toEm(767.98)) {
+      text-align: center;
+    }
+  }
+
+  // .questions-form__body
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("gap", 30, 15);
+  }
+
+  // .questions-form__descr
+
+  &__descr {
+    font-weight: 300;
+    line-height: 1.38;
+    letter-spacing: toRem(0.03);
+    @media (max-width: toEm(767.98)) {
+      text-align: center;
+    }
+  }
+
+  // .questions-form__row
+
+  &__row {
+    display: flex;
+    gap: toRem(20);
+    @media (max-width: toEm(767.98)) {
+      flex-direction: column;
+    }
+  }
+
+  // .questions-form__group
+
+  &__group {
+    flex: 1 1 auto;
+  }
+
+  // .questions-form__label
+
+  &__label {
+  }
+
+  // .questions-form__input
+
+  &__input {
+    border: 1px solid $inputGreyLightColor;
+    max-height: toRem(62);
+    @include adaptiveValue("padding", 20, 10);
+    &::placeholder {
+      font-weight: 300;
+      line-height: 1.38;
+      letter-spacing: toRem(0.03);
+    }
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      border-color: $blackColor;
+    }
+  }
+
+  // .questions-form__button
+
+  &__button {
+    @media (min-width: toEm(768)) {
+      align-self: flex-start;
+    }
+  }
+}
+
+//========================================================================================================================================================
+.stores {
+  @include adaptiveValue("padding-block-start", 120, 25);
+  // .stores__container
+
+  &__container {
+    display: flex;
+    gap: toRem(20);
+    @media (max-width: toEm(767.98)) {
+      flex-direction: column-reverse;
+      gap: toRem(30);
+    }
+  }
+
+  // .stores__picture
+
+  &__picture {
+    flex: 1 1 toRem(640);
+    @media (max-width: toEm(767.98)) {
+      flex: 1 1 auto;
+    }
+  }
+
+  // .stores__image
+
+  &__image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 640 / 529;
+  }
+
+  // .stores__our-store
+
+  &__our-store {
+  }
+}
+.store-our {
+  flex-basis: toRem(640);
+  @media (max-width: toEm(767.98)) {
+    flex-basis: 0;
+  }
+
+  // .store-our__title
+
+  &__title {
+    margin-bottom: toRem(10);
+    @media (max-width: toEm(767.98)) {
+      text-align: center;
+    }
+  }
+
+  // .store-our__descr
+
+  &__descr {
+    @include adaptiveValue("margin-bottom", 30, 15);
+    font-weight: 300;
+    line-height: 1.38;
+    letter-spacing: toRem(0.03);
+    @media (max-width: toEm(767.98)) {
+      text-align: center;
+    }
+  }
+
+  // .store-our__body
+
+  &__body {
+    display: flex;
+    gap: toRem(20);
+    @media (max-width: toEm(425)) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    @media (max-width: toEm(767.98)) {
+      justify-content: space-between;
+      .contact:nth-child(2n) {
+        text-align: right;
+      }
+    }
+    @media (max-width: toEm(425)) {
+      justify-content: space-between;
+      .contact:nth-child(2n) {
+        text-align: center;
+      }
+    }
+  }
+}

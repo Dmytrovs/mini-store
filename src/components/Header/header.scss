@@ -6,10 +6,18 @@
 @use "../../scss/icons" as *;
 
 .header {
+		position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 50;
 	padding-block: toRem(25);
 	color: $blackColor;
-	position: relative;
-	z-index: 2;
+	//position: relative;
+	//z-index: 2;
+	//position: sticky;
+	//top: 0;
+	width: 100%;
+	background-color: $whiteColor;
 	// .header__container
 
 	&__container {
@@ -158,7 +166,7 @@
 
 	&__subnav {
 		// display: none;
-			background-color:$graylightPaginationColor;
+		background-color: $graylightPaginationColor;
 		position: absolute;
 		top: calc(100% + toRem(8));
 		left: 0;

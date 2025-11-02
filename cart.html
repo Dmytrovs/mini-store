@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/mini-store/">
+  <title>Cart</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div id="header"></div>
+    <main class="page">
+      <section class="page__about about">
+        <div class="about__content">
+          <div class="header-content">
+            <div data-aos="fade-up" class="header-content__title">Cart</div>
+            <div data-aos="fade-up" class="header-content__sub-nav-title title-nav-sub">
+              <a href="index.html" class="title-nav-sub__home">Home</a>
+              <span class="title-nav-sub__arrow">&gt;</span>
+              <a href="cart.html" class="title-nav-sub__current-page">Cart</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="cart">
+        <div class="cart__container">
+          <div class="cart__body">
+            <div data-aos="fade-up" data-aos-delay="0" class="header__titles">
+              <h3 class="header__product">Product</h3>
+              <h3 class="header__quantity">Quantity</h3>
+              <h3 class="header__subtotal">Subtotal</h3>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100" class="item-cart__item">
+              <div class="item">
+                <div class="item__content">
+                  <picture class="item__picture">
+                    <img src="images/cart/01.png" alt="image-cart" class="item__image">
+                  </picture>
+                  <div class="item__text">
+                    <h4 class="item__title">Iphone 13</h4>
+                    <div class="item__price">$1500.00</div>
+                  </div>
+                </div>
+                <div class="item__quantity quantity">
+                  <button type="button" class="quantity__button" data-action="decrease">-</button>
+                  <input readonly minlength="1" type="text" value="1" class="quantity__input">
+                  <button type="button" class="quantity__button" data-action="increase">+</button>
+                </div>
+                <div class="item__subtotal">
+                  <h4 class="item__coast">$1500.00</h4>
+                  <button type="button" class="item__remove">
+                    <svg width="37" height="39" viewBox="0 0 37 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M2.54171 0.00187486L0 2.7L15.5134 19.1625L0 35.6269L2.54348 38.325L18.0516 21.8569L33.5616 38.3231L36.1015 35.6269L20.5898 19.1625L36.1015 2.69812L33.5598 0L18.0516 16.4681L2.54171 0.00187486Z"
+                        fill="#272727" />
+                    </svg>
+                    <!--<img src="images/cart/cross.svg" alt="Image">-->
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200" class="item-cart__item">
+              <div class="item">
+                <div class="item__content">
+                  <picture class="item__picture">
+                    <img src="images/cart/02.png" alt="image-cart" class="item__image">
+                  </picture>
+                  <div class="item__text">
+                    <h4 class="item__title">Pink watch</h4>
+                    <div class="item__price">$870.00</div>
+                  </div>
+                </div>
+                <div class="item__quantity quantity">
+                  <button type="button" class="quantity__button" data-action="decrease">-</button>
+                  <input readonly minlength="1" type="text" value="1" class="quantity__input">
+                  <button type="button" class="quantity__button" data-action="increase">+</button>
+                </div>
+                <div class="item__subtotal">
+                  <h4 class="item__coast">$870.00</h4>
+                  <button type="button" class="item__remove">
+                    <svg width="37" height="39" viewBox="0 0 37 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M2.54171 0.00187486L0 2.7L15.5134 19.1625L0 35.6269L2.54348 38.325L18.0516 21.8569L33.5616 38.3231L36.1015 35.6269L20.5898 19.1625L36.1015 2.69812L33.5598 0L18.0516 16.4681L2.54171 0.00187486Z"
+                        fill="#272727" />
+                    </svg>
+                    <!--<img src="images/cart/cross.svg" alt="Image">-->
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart__total">
+            <div class="total-cart">
+              <h5 data-aos="fade-right" data-aos-delay="200" class="total-cart__title">Cart totals</h5>
+              <div class="total-cart__body">
+                <div data-aos="fade-right" data-aos-delay="300" class="total-cart__content">
+                  <h5 class="total-cart__label ">Subtotal</h5>
+                  <div class="total-cart__cost">$1500.00</div>
+                </div>
+                <div data-aos="fade-right" data-aos-delay="400" class="total-cart__content">
+                  <h5 class="total-cart__label ">Total</h5>
+                  <div class="total-cart__cost">$1500.00</div>
+                </div>
+              </div>
+            </div>
+            <div class="cart__actions">
+              <button data-aos="fade-up" data-aos-delay="300" type="button" class="cart__button button button--pading-inline50">Update cart</button>
+              <button data-aos="fade-up" data-aos-delay="400" type="button" class="cart__button button button--pading-inline50">Continue shopping</button>
+              <button data-aos="fade-up" data-aos-delay="500" type="button" class="cart__button button button--pading-inline50">Proceed to
+                checkout</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="subscribe"></section>
+      <section id="insta"></section>
+    </main>
+    <div id="footer"></div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="/src/main.js"></script>
+
+</body>
+
+</html>

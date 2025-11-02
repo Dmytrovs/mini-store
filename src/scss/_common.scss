@@ -68,9 +68,13 @@
   text-transform: uppercase;
   letter-spacing: toRem(1.8);
   @include adaptiveValue("font-size", 30, 25);
+  &--letter {
+    letter-spacing: toRem(0.6);
+  }
 }
 
 .button {
+  cursor: pointer;
   background-color: $blueColor;
   text-align: center;
   font-size: toRem(14);
@@ -82,12 +86,16 @@
   transition:
     background-color 0.3s,
     color 0.3s;
+  @include adaptiveValue("padding-inline", 40, 15);
+  @include adaptiveValue("padding-block", 16, 12);
   &--pading-inline50 {
     @include adaptiveValue("padding-inline", 50, 15);
     background-color: $blackColor;
   }
-  @include adaptiveValue("padding-inline", 40, 15);
-  @include adaptiveValue("padding-block", 16, 12);
+  &--background-blue-color-pading-inline50 {
+    background-color: $blueColor;
+    @include adaptiveValue("padding-inline", 50, 15);
+  }
   @media (any-hover: hover) {
     &:hover {
       background-color: $grayBluelightColor;
@@ -98,6 +106,7 @@
 
 //========================================================================================================================================================
 .products-section {
+
   @include adaptiveValue("padding-block-start", 120, 25);
   // .products-section__container
 
@@ -381,3 +390,369 @@
     }
   }
 }
+
+//========================================================================================================================================================
+//card-post
+.card-post {
+  display: flex;
+  flex-direction: column;
+  // .card-post__image
+
+  &__image {
+    aspect-ratio: 420 / 298;
+    max-width: 420px;
+    width: 100%;
+    overflow: hidden;
+    @media (max-width: toEm(470)) {
+      max-width: 100%;
+    }
+    &:not(:last-child) {
+      margin-bottom: toRem(14);
+    }
+  }
+
+  // .card-post__img
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__title-post {
+  }
+
+  &__link-post {
+    color: $blackColor;
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
+    line-height: 1.44; /* 28.8px */
+    letter-spacing: toRem(1.2);
+    text-transform: uppercase;
+    transition: color 0.3s;
+    @include adaptiveValue("font-size", 20, 15);
+    @media (any-hover: hover) {
+      &:hover {
+        color: $blueColor;
+      }
+    }
+  }
+
+  // .card-post__meta-post
+
+  &__meta-post {
+  }
+}
+.post-meta {
+  color: $greyMediumColor;
+  font-family: "Jost", sans-serif;
+  font-size: toRem(13);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: toRem(0.78);
+  text-transform: uppercase;
+  display: flex;
+  column-gap: toRem(5);
+  flex-grow: 1;
+  &:not(:last-child) {
+    margin-bottom: toRem(6);
+  }
+  // .post-meta__time
+
+  &__time {
+  }
+
+  // .post-meta__arrow
+
+  &__arrow {
+  }
+
+  // .post-meta__category
+
+  &__category {
+  }
+}
+
+//========================================================================================================================================================
+//filter-category
+
+.filter-category {
+  // .filter-category__wrapper
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    @include adaptiveValue("gap", 40, 10);
+    @media (max-width: toEm(767.98)) {
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  }
+
+  // .filter-category__item
+
+  &__item {
+    min-width: toRem(58);
+  }
+
+  // .filter-category__title
+
+  &__title {
+    button {
+      color: $blackColor;
+      font-family: "Jost", sans-serif;
+      font-size: toRem(20);
+      font-weight: 400;
+      letter-spacing: toRem(1.2);
+      line-height: 1.2;
+      text-transform: uppercase;
+      text-decoration: underline;
+      transition: color 0.3s;
+      @media (any-hover: hover) {
+        &:hover {
+          color: $blueColor;
+        }
+      }
+    }
+
+    list-style: none;
+    &::-webkit-details-marker {
+      display: none;
+    }
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+
+  // .filter-category__list
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(8);
+    @media (max-width: toEm(767.98)) {
+      align-items: center;
+    }
+  }
+
+  // .filter-category__list-item
+
+  &__list-item {
+  }
+
+  // .filter-category__button
+
+  &__button {
+    line-height: 1.38;
+    letter-spacing: toRem(0.48);
+    transition: color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $blueColor;
+      }
+    }
+  }
+  &__button--active {
+    color: $blueColor;
+  }
+}
+
+//========================================================================================================================================================
+//form-sidebar
+
+.form-sidebar {
+  display: flex;
+  justify-content: center;
+  &:not(:last-child) {
+    @include adaptiveValue("margin-bottom", 40, 20);
+  }
+  // .form-sidebar__label
+
+  &__label {
+    @media (max-width: toEm(767.98)) {
+      width: 100%;
+    }
+  }
+
+  // .form-sidebar__input
+
+  &__input {
+    border: 1px solid $formBorderLightColor;
+    @include adaptiveValue("padding-inline-start", 30, 15);
+    @include adaptiveValue("padding-block", 16, 10);
+  }
+
+  // .form-sidebar__button
+
+  &__button {
+    background-color: $blackColor;
+    @include adaptiveValue("padding", 16, 10);
+    @media (any-hover: hover) {
+      &:hover span {
+        transform: scale(1.1);
+      }
+    }
+    span {
+      font-size: toRem(21);
+      color: $whiteColor;
+      transition: transform 0.3s;
+      display: inline-block;
+    }
+  }
+}
+
+//========================================================================================================================================================
+//pagination
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: toRem(30);
+  // .pagination__arrow
+
+  &__arrow {
+    font-size: toRem(23);
+    color: $grayBluelightColor;
+  }
+
+  // .pagination__arrow--prew
+
+  &__arrow--prew {
+    transition: color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $blueColor;
+      }
+    }
+  }
+
+  // .pagination__btn
+
+  &__btn {
+    color: $grayBluelightColor;
+    font-family: "Jost", sans-serif;
+    font-size: toRem(20);
+    font-weight: 400;
+    transition: color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $darkGreyPaginationColor;
+      }
+    }
+  }
+
+  // .pagination__btn--active
+
+  &__btn--active {
+    color: $blueColor;
+  }
+
+  // .pagination__arrow--next
+
+  &__arrow--next {
+    transform: rotate(180deg);
+    color: $blueColor;
+    transition: font-weight 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================
+//social
+
+.social {
+  display: flex;
+  column-gap: toRem(30);
+  // .social__link
+
+  &__link {
+    transition: color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $blueColor;
+      }
+    }
+  }
+}
+
+
+//========================================================================================================================================================
+//contact 
+.contact {
+  flex-basis: toRem(310);
+  @media (max-width: toEm(767.98)) {
+    justify-content: space-between;
+    flex-basis: 0;
+    flex: 1 1 auto;
+  }
+  // .contact__title
+
+  &__title {
+    font-family: "Jost", sans-serif;
+    font-size: toRem(20);
+    letter-spacing: toRem(0.06);
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: $blackColor;
+    margin-bottom: toRem(14);
+    transition: color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $blueColor;
+      }
+    }
+  }
+
+  // .contact__content
+
+  &__content {
+    line-height: 1.38;
+    letter-spacing: toRem(0.03);
+    display: flex;
+    flex-direction: column;
+    gap: toRem(10);
+  }
+
+  // .contact__adress
+
+  &__address {
+  }
+
+  // .contact__number
+
+  &__number {
+    line-height: 1.18;
+    transition: color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $blueColor;
+      }
+    }
+  }
+
+  // .contact__mail
+
+  &__mail {
+    transition: color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $blueColor;
+      }
+    }
+  }
+}
+
+
+//========================================================================================================================================================

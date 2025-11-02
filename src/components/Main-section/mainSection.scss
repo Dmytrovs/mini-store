@@ -16,6 +16,8 @@
 }
 .hero {
 	background-color: $greyColor;
+		height: 100svh;
+		width: 100%;
 	// .hero__container
 	&__inner {
 		display: flex;
@@ -34,7 +36,6 @@
 		margin-right: 0;
 		overflow: hidden;
 		@include adaptiveValue("padding-block-start", 68, 10);
-
 	}
 
 	// .hero__swiper

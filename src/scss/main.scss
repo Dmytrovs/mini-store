@@ -10,7 +10,6 @@
 @use "common" as*;
 
 //About
-@use "about" as*;
 
 
 // @import '@components/Header/header'; // SCSS компонента
@@ -24,7 +23,7 @@ $minWidth: 320;
 // Ширина полотна (макету)
 $maxWidth: 1920;
 // Ширина обмежуючого контейнера 
-$maxWidthContainer: 1310;
+$maxWidthContainer: 1300;
 // Загальний відступ у контейнера
 // (30 = по 15px ліворуч і праворуч)
 $containerPadding: 30;
@@ -64,4 +63,7 @@ body {
 
 .wrapper > main {
 	flex-grow: 1;
+}
+main {
+	@include adaptiveValue("	padding-block-start", 83, 78);
 }

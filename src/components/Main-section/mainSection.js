@@ -32,8 +32,8 @@ export function rendermainSection() {
   };
 
   initSwiperHero();
+  
 }
-
 
 
 
